@@ -1,11 +1,21 @@
 {
   "name": "vexpandtransition",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "private": true,
+  "private": false,
+  "type": "module",
+  "author": {
+    "name": "kuyoru"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kuyoru-kamikisho/vexpandtransition"
+  },
   "files": [
     "./v2/src",
-    "./v3/src"
+    "./v3/src",
+    "./README.md",
+    "LICENSE"
   ],
   "exports": {
     "./v2": "./v2/src/VExpandTransition.vue",
