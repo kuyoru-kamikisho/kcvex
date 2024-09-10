@@ -1,0 +1,14 @@
+{
+  "name": "vexpandtransition",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "files": [
+    "./v2/src",
+    "./v3/src"
+  ],
+  "exports": {
+    "./v2": "./v2/src/VExpandTransition.vue",
+    "./v3": "./v3/src/VExpandTransition.vue"
+  }
+}
