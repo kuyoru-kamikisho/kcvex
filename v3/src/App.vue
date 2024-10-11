@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {ref} from "vue";
-import VExpandTransition from "../../kc/V3ExpandTransition.vue";
+import VExpandTransition from "../../kc/K3ExpandTransition.vue";
 
 const xss = ref([true, true])
 </script>

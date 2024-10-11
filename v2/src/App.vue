@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import VExpandTransition from "../../kc/V2ExpandTransition.vue";
+import VExpandTransition from "../../kc/K2ExpandTransition.vue";
 // @ts-ignore
 import KStyle from "../../kc/KStyle.vue";
 // @ts-ignore
