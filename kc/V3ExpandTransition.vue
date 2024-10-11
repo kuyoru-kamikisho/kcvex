@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import {camelize, type PropType} from 'vue'
-import type {HTMLExpandElement} from "@/types";
+import type {HTMLExpandElement} from "v3/src/types";
 
 const props = defineProps({
   direction: {type: String as PropType<'x' | 'y'>, default: 'y'},

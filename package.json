@@ -1,6 +1,6 @@
 {
-  "name": "vexpandtransition",
-  "version": "1.0.1",
+  "name": "kvex",
+  "version": "1.0.2",
   "description": "",
   "private": false,
   "type": "module",
@@ -9,16 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kuyoru-kamikisho/vexpandtransition"
+    "url": "https://github.com/kuyoru-kamikisho/kvex"
   },
   "files": [
-    "./v2/src",
-    "./v3/src",
+    "./kc",
     "./README.md",
     "LICENSE"
   ],
   "exports": {
-    "./v2": "./v2/src/VExpandTransition.vue",
-    "./v3": "./v3/src/VExpandTransition.vue"
-  }
+    ".": "./kc"
+  },
+  "packageManager": "yarn@4.4.1"
 }

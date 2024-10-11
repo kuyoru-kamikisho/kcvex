@@ -1,4 +1,4 @@
-适用于 [vue2](https://v2.vuejs.org/) 和 [vue3](https://vuejs.org/) 的 `VExpandTransition` 组件
+适用于 [vue2](https://v2.vuejs.org/) 和 [vue3](https://vuejs.org/) 的 `VExpandTransition` 等 组件
 
 使用方式：
 
@@ -7,10 +7,10 @@
    1. 首先，引入组件
       ```javascript
       // 适用于 vue2
-      import VExpandTransition from 'vexpandtransition/v2'
+      import VExpandTransition from 'kvex/V2ExpandTransition'
       
       // 适用于 vue3
-      import VExpandTransition from 'vexpandtransition/v3'
+      import VExpandTransition from 'kvex/V3ExpandTransition'
       ```
    2. 在模板中使用
       ```html
@@ -18,3 +18,7 @@
         ...
       </v-expand-transition>
       ```
+      
+附加内容：
+
+您可以查看 [kc目录](./kc/) 额外附加的小部件

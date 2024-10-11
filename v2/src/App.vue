@@ -1,9 +1,18 @@
 <script setup lang="ts">
-import VExpandTransition from "./VExpandTransition.vue";
+import VExpandTransition from "../../kc/V2ExpandTransition.vue";
+// @ts-ignore
+import KStyle from "../../kc/KStyle.vue";
+// @ts-ignore
+import KOverlay from "../../kc/KOverlay.vue";
+// @ts-ignore
+import KSheet from "../../kc/KSheet.vue";
+// @ts-ignore
+import KBtn from "../../kc/KBtn.vue";
 import {ref} from "vue";
 
 const fox = ref(true)
 const foy = ref(true)
+const ovl = ref(false)
 </script>
 
 <template>
@@ -25,15 +34,26 @@ const foy = ref(true)
         <div class="fox orange" v-else></div>
       </v-expand-transition>
     </div>
+    <k-style>
+      <button @click="ovl=true">打开遮罩</button>
+      <transition name="kfade">
+        <k-overlay v-if="ovl">
+          <k-sheet width="92px" height="80px" class="d-flex align-ct justify-ct mx-auto mt-10">
+            <k-btn @click.native="ovl=false">关闭遮罩</k-btn>
+          </k-sheet>
+        </k-overlay>
+      </transition>
+    </k-style>
   </div>
 </template>
 
 <style>
-.box{
+.box {
   display: flex;
   justify-content: space-between;
   margin: 40px 120px;
 }
+
 button {
   padding: 8px 12px;
 }

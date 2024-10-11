@@ -1,5 +1,5 @@
 <script lang="ts">
-import {type HTMLExpandElement, upperFirst} from "./expandUtil";
+import {type HTMLExpandElement, upperFirst} from "../v2/src/expandUtil";
 
 export default {
   props: {
