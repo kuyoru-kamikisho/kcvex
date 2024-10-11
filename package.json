@@ -7,6 +7,13 @@
   "author": {
     "name": "kuyoru"
   },
+  "keywords": [
+    "vue-expand-transition",
+    "expandTransition",
+    "v-expand-transition",
+    "v-overlay",
+    "vue-ui"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/kuyoru-kamikisho/kcvex"
