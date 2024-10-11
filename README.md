@@ -7,10 +7,10 @@
    1. 首先，引入组件
       ```javascript
       // 适用于 vue2
-      import VExpandTransition from 'kvex/V2ExpandTransition'
+      import VExpandTransition from 'kcvex/V2ExpandTransition'
       
       // 适用于 vue3
-      import VExpandTransition from 'kvex/V3ExpandTransition'
+      import VExpandTransition from 'kcvex/V3ExpandTransition'
       ```
    2. 在模板中使用
       ```html
@@ -21,4 +21,4 @@
       
 附加内容：
 
-您可以查看 [kc目录](./kc/) 额外附加的小部件
+您可以通过查看 [kc目录](./kc/) 获得所有Vue小部件。
