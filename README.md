@@ -11,6 +11,12 @@
       
       // 适用于 vue3
       import VExpandTransition from 'kcvex/kc/K3ExpandTransition.vue'
+      
+      // 如果您不喜欢上面这种导入方式，可以尝试下面的方式
+      // 简化版导入 (v2) 注意此时的名称
+      import { K2ExpandTransition } from 'kcvex'
+      // 简化版导入 (v3) 注意此时的名称
+      import { K3ExpandTransition } from 'kcvex'
       ```
       ```javascript
       // 选项式组件
