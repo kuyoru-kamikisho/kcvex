@@ -7,10 +7,16 @@
    1. 首先，引入组件
       ```javascript
       // 适用于 vue2
-      import VExpandTransition from 'kcvex/K2ExpandTransition'
+      import VExpandTransition from 'kcvex/kc/K2ExpandTransition.vue'
       
       // 适用于 vue3
-      import VExpandTransition from 'kcvex/K3ExpandTransition'
+      import VExpandTransition from 'kcvex/kc/K3ExpandTransition.vue'
+      ```
+      ```javascript
+      // 选项式组件
+      ...
+      component:{ VExpandTransition }
+      ...
       ```
    2. 在模板中使用
       ```html
