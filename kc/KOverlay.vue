@@ -1,9 +1,3 @@
-<template>
-  <div @wheel="wheel" :style="style" class="k-overlay">
-    <slot></slot>
-  </div>
-</template>
-
 <script>
 export default {
   name: "KOverlay",
@@ -22,62 +16,59 @@ export default {
     bottom: {type: String, default: '0'},
     right: {type: String, default: '0'},
     zIndex: {type: String, default: '2024'},
-    preventWheel: {type: Boolean, default: false},
     preventOverflow: {type: Boolean, default: false},
   },
-  computed: {
-    style() {
-      return `--color: ${this.color};
-              --position: ${this.position};
-              --width: ${this.width};
-              --height: ${this.height};
-              --min-width: ${this.minWidth};
-              --min-height: ${this.minHeight};
-              --max-width: ${this.maxWidth};
-              --max-height: ${this.maxHeight};
-              --top: ${this.top};
-              --left: ${this.left};
-              --bottom: ${this.bottom};
-              --right: ${this.right};
-              --overflow: ${this.overflow};
-              --z-index:${this.zIndex};`
+  data: () => ({
+    rootStyle: {
+      height: 0,
+      heightPriority: '',
+      overflow: '',
+      overflowPriority: ''
     }
-  },
-  methods: {
-    wheel(e) {
-      if (this.preventWheel) {
-        e.preventDefault();
-      }
-    }
-  },
+  }),
   mounted() {
     if (this.preventOverflow) {
-      document.querySelector('html').style.overflow = 'hidden'
+      const rootElement = document.querySelector('html');
+      this.rootStyle.height = rootElement.style.height
+      this.rootStyle.heightPriority = rootElement.style.getPropertyPriority('height')
+      this.rootStyle.overflow = rootElement.style.overflow
+      this.rootStyle.overflowPriority = rootElement.style.getPropertyPriority('overflow')
+      rootElement.style.height = '100vh'
+      rootElement.style.overflow = 'auto'
     }
   },
   destroyed() {
     if (this.preventOverflow) {
-      document.querySelector('html').style.overflow = ''
+      const rootElement = document.querySelector('html');
+      rootElement.style.setProperty('height', this.rootStyle.overflow, this.rootStyle.overflowPriority)
+      rootElement.style.setProperty('overflow', this.rootStyle.height, this.rootStyle.heightPriority)
     }
+  },
+  render(h) {
+    return h("div", {
+      staticClass: 'k-overlay',
+      style: {
+        width: this.width,
+        height: this.height,
+        minWidth: this.minWidth,
+        maxWidth: this.maxWidth,
+        maxHeight: this.maxHeight,
+        minHeight: this.minHeight,
+        overflow: this.overflow,
+        'background-color': this.color,
+        position: this.position,
+        top: this.top,
+        left: this.left,
+        right: this.right,
+        bottom: this.bottom,
+        'z-index': this.zIndex
+      },
+      on: this.$listeners
+    }, this.$slots.default)
   }
 }
 </script>
 
 <style>
-.k-overlay {
-  background-color: var(--color);
-  position: var(--position);
-  top: var(--top);
-  left: var(--left);
-  right: var(--right);
-  bottom: var(--bottom);
-  width: var(--width);
-  height: var(--height);
-  min-width: var(--min-width);
-  min-height: var(--min-height);
-  max-width: var(--max-width);
-  max-height: var(--max-height);
-  overflow: var(--overflow);
-  z-index: var(--z-index);
-}
+
 </style>
