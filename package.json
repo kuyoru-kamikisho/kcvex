@@ -33,7 +33,8 @@
       "K3ExpandTransition": "./kc/K3ExpandTransition.vue",
       "KBtn": "./kc/KBtn.vue",
       "KDivider": "./kc/KDivider.vue",
-      "KOverlay": "./kc/KOverlay.vue",
+      "K2Overlay": "./kc/K2Overlay.vue",
+      "K3Overlay": "./kc/K3Overlay.vue",
       "KSheet": "./kc/KSheet.vue",
       "KStyle": "./kc/KStyle.vue"
     },

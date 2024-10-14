@@ -1273,7 +1273,8 @@ export default {
   transition: opacity .2s;
 }
 
-.kfade-enter, .kfade-leave-to {
+.kfade-enter, .kfade-leave-to,
+.kfade-enter-from {
   opacity: 0;
 }
 

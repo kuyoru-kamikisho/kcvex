@@ -1,14 +1,21 @@
 <script setup lang="ts">
 import {ref} from "vue";
 import VExpandTransition from "../../kc/K3ExpandTransition.vue";
+import KOverlay from "../../kc/K3Overlay.vue";
+import KStyle from "../../kc/KStyle.vue";
 
 const xss = ref([true, true])
+const ovl = ref(false)
 </script>
 
 <template>
-  <div class="container">
+  <k-style class="container">
     <button @click="xss[0]=!xss[0]">X测试</button>
     <button @click="xss[1]=!xss[1]">Y测试</button>
+    <button @click="ovl=true">遮罩测试</button>
+    <k-overlay :model="ovl">
+      <button @click="ovl=false">关闭遮罩</button>
+    </k-overlay>
     <div class="test-box">
       <div class="test-unit unit1">
         <v-expand-transition direction="x">
@@ -25,7 +32,7 @@ const xss = ref([true, true])
         </v-expand-transition>
       </div>
     </div>
-  </div>
+  </k-style>
 </template>
 
 <style>

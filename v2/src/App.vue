@@ -3,7 +3,7 @@ import VExpandTransition from "../../kc/K2ExpandTransition.vue";
 // @ts-ignore
 import KStyle from "../../kc/KStyle.vue";
 // @ts-ignore
-import KOverlay from "../../kc/KOverlay.vue";
+import KOverlay from "../../kc/K2Overlay.vue";
 // @ts-ignore
 import KSheet from "../../kc/KSheet.vue";
 // @ts-ignore
