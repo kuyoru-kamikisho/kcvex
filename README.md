@@ -54,9 +54,13 @@
 
 `分割线` 组件，可快速设置一定的样式，详情可以看该组件的 props，适用于 vue2、vue3
 
-### [KOverlay](./kc/K2Overlay.vue)
+### [K2Overlay](./kc/K2Overlay.vue)
 
-`遮罩` 组件，可快速设置一定的样式，详情可以看该组件的 props，提供默认插槽，适用于 vue2、vue3
+`遮罩` 组件，可快速设置一定的样式，详情可以看该组件的 props，提供默认插槽，适用于 vue2
+
+### [K3Overlay](./kc/K3Overlay.vue)
+
+`遮罩` 组件，可快速设置一定的样式，详情可以看该组件的 props，提供默认插槽，适用于 vue3
 
 ### [KSheet](./kc/KSheet.vue)
 
