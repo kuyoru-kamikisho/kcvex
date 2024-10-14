@@ -1,6 +1,6 @@
 {
   "name": "vexpandtransition",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "适用于vue2、vue3的expand动画组件",
   "private": false,
   "type": "module",

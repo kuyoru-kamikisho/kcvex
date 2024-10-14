@@ -20,6 +20,18 @@
    
    // 适用于 vue3 （vue3里面也可以使用v2版本的组件，两者只是在开发形式上有所区别）
    import VExpandTransition from 'vexpandtransition/v3'
+   
+   // 如果引入失败无法解析 (v2)
+   import VExpandTransition from 'vexpandtransition/v2/src/VExpandTransition.vue'
+   // 如果引入失败无法解析 (v3)
+   import VExpandTransition from 'vexpandtransition/v3/src/VExpandTransition.vue'
+   ```
+
+   ```javascript
+   // 选项式组件
+   ...
+   component:{ VExpandTransition }
+   ...
    ```
 2. 在模板中使用
    ```html
