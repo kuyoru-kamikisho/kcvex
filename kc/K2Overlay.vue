@@ -3,6 +3,8 @@ export default {
   name: "KOverlay",
   props: {
     attachTo: {type: String, default: 'body'},
+    transition: {type: String, default: 'kfade'},
+    model: {type: Boolean, default: true},
     width: {type: String, default: ''},
     height: {type: String, default: ''},
     maxWidth: {type: String, default: ''},
@@ -57,7 +59,11 @@ export default {
     }
   },
   render(h) {
-    return h("div", {
+    return this.model && h('transition', {
+      attrs: {
+        name: this.transition
+      }
+    }, [h("div", {
       staticClass: 'k-overlay',
       style: {
         width: this.width,
@@ -76,7 +82,7 @@ export default {
         'z-index': this.zIndex
       },
       on: this.$listeners
-    }, this.$slots.default)
+    }, this.$slots.default)])
   }
 }
 </script>

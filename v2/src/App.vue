@@ -37,13 +37,11 @@ const ovl = ref(false)
     <k-style>
       <button @click="ovl=true">打开遮罩</button>
       <!--      <k-sheet color="black" height="2000px">滚动专用</k-sheet>-->
-      <transition name="kfade">
-        <k-overlay v-if="ovl" bottom="" min-height="100%" position="absolute">
-          <k-sheet color="gray" width="92px" height="80px" class="d-flex round-4 align-ct justify-ct mx-auto mt-10">
-            <k-btn @click.native="ovl=false">关闭遮罩</k-btn>
-          </k-sheet>
-        </k-overlay>
-      </transition>
+      <k-overlay :model="ovl" bottom="" min-height="100%" position="absolute">
+        <k-sheet color="gray" width="92px" height="80px" class="d-flex round-4 align-ct justify-ct mx-auto mt-10">
+          <k-btn @click.native="ovl=false">关闭遮罩</k-btn>
+        </k-sheet>
+      </k-overlay>
     </k-style>
   </div>
 </template>
