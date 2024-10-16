@@ -2,6 +2,7 @@
 export default {
   name: "KOverlay",
   props: {
+    attachTo: {type: String, default: 'body'},
     width: {type: String, default: ''},
     height: {type: String, default: ''},
     maxWidth: {type: String, default: ''},
@@ -26,6 +27,16 @@ export default {
       overflowPriority: ''
     }
   }),
+  methods: {
+    attachEl() {
+      const targetDom = document.querySelector(this.attachTo)
+      if (targetDom === null) {
+        console.warn(`Can't find target Dom: ${this.attachTo}`)
+      } else {
+        targetDom.appendChild(this.$el)
+      }
+    }
+  },
   mounted() {
     if (this.preventOverflow) {
       const rootElement = document.querySelector('html');
@@ -36,6 +47,7 @@ export default {
       rootElement.style.height = '100vh'
       rootElement.style.overflow = 'auto'
     }
+    this.attachEl()
   },
   destroyed() {
     if (this.preventOverflow) {

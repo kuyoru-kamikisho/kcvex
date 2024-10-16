@@ -12,7 +12,7 @@ import {ref} from "vue";
 
 const fox = ref(true)
 const foy = ref(true)
-const ovl = ref(true)
+const ovl = ref(false)
 </script>
 
 <template>
@@ -39,7 +39,7 @@ const ovl = ref(true)
       <!--      <k-sheet color="black" height="2000px">滚动专用</k-sheet>-->
       <transition name="kfade">
         <k-overlay v-if="ovl" bottom="" min-height="100%" position="absolute">
-          <k-sheet color="gray" width="92px" height="2080px" class="d-flex align-ct justify-ct mx-auto mt-10">
+          <k-sheet color="gray" width="92px" height="80px" class="d-flex round-4 align-ct justify-ct mx-auto mt-10">
             <k-btn @click.native="ovl=false">关闭遮罩</k-btn>
           </k-sheet>
         </k-overlay>

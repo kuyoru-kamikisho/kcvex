@@ -1,6 +1,6 @@
 {
   "name": "kcvex",
-  "version": "1.0.41",
+  "version": "1.1.0",
   "description": "适用于vue2和vue3的抽屉动画等组件，帮助您快速搭建基础布局",
   "private": false,
   "type": "module",
