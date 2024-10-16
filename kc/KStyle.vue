@@ -66,8 +66,24 @@ export default {
   font-size: 22px;
 }
 
+.text-24 {
+  font-size: 24px;
+}
+
+.text-26 {
+  font-size: 26px;
+}
+
 .text-28 {
   font-size: 28px;
+}
+
+.text-30 {
+  font-size: 30px;
+}
+
+.text-32 {
+  font-size: 32px;
 }
 
 /** ---------------------------------------------------------------------------------*
