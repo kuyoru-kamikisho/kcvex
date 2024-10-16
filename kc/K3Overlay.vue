@@ -3,7 +3,7 @@ export default {
   name: 'KOverlay',
   props: {
     attachTo: {type: String, default: 'body'},
-    animate: {type: String, default: 'kfade'},
+    transition: {type: String, default: 'kfade'},
     model: {type: Boolean, default: true},
     width: {type: String, default: ''},
     height: {type: String, default: ''},
