@@ -40,11 +40,13 @@
 
 ### [K2ExpandTransition](./kc/K2ExpandTransition.vue)
 
-适用于任何 vue 版本 的`抽屉伸缩展开渐变动画组件`，提供默认插槽
+适用于任何 vue 版本 的`抽屉伸缩展开渐变动画组件`，提供默认插槽，
+与`K3ExpandTransition`具备完全相同的props
 
 ### [K3ExpandTransition](./kc/K3ExpandTransition.vue)
 
-支持setup 的任意vue版本 的`抽屉伸缩展开渐变动画组件`，提供默认插槽
+支持setup 的任意vue版本 的`抽屉伸缩展开渐变动画组件`，提供默认插槽，
+与`K2ExpandTransition`具备完全相同的props
 
 ### [KBtn](./kc/KBtn.vue)
 
@@ -56,11 +58,13 @@
 
 ### [K2Overlay](./kc/K2Overlay.vue)
 
-`遮罩` 组件，可快速设置一定的样式，支持跨Dom结构进行渲染，详情可以看该组件的 props，提供默认插槽，适用于 vue2
+`遮罩` 组件，可快速设置一定的样式，支持跨Dom结构进行渲染，详情可以看该组件的 props，提供默认插槽，适用于 vue2，
+与`K3Overlay`拥有完全相同的props
 
 ### [K3Overlay](./kc/K3Overlay.vue)
 
-`遮罩` 组件，可快速设置一定的样式，支持跨Dom结构进行渲染，详情可以看该组件的 props，提供默认插槽，适用于 vue3
+`遮罩` 组件，可快速设置一定的样式，支持跨Dom结构进行渲染，详情可以看该组件的 props，提供默认插槽，适用于 vue3，
+与`K2Overlay`拥有完全相同的props
 
 ### [KSheet](./kc/KSheet.vue)
 
