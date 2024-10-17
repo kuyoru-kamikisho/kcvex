@@ -1,0 +1,238 @@
+{
+  "K2ExpandTransition/direction": {
+    "type": "string\n",
+    "description": "Specify the expand direction is x or y, default y."
+  },
+  "K2ExpandTransition/mode": {
+    "type": "string\n",
+    "description": "Specify the transition mode."
+  },
+  "K3ExpandTransition/direction": {
+    "type": "string\n",
+    "description": "Specify the expand direction is x or y, default y."
+  },
+  "K3ExpandTransition/mode": {
+    "type": "string\n",
+    "description": "Specify the transition mode."
+  },
+  "K2Overlay/attachTo": {
+    "type": "string\n",
+    "description": "Specify the dom to teleport this component's real dom, default body."
+  },
+  "K2Overlay/transition": {
+    "type": "string\n",
+    "description": "Specify the transition class, default kfade which has been defined in KStyle."
+  },
+  "K2Overlay/model": {
+    "type": "boolean\n",
+    "description": "Specify the dom is show or hidden."
+  },
+  "K2Overlay/width": {
+    "type": "string\n",
+    "description": "Specify the width."
+  },
+  "K2Overlay/height": {
+    "type": "string\n",
+    "description": "Specify the height."
+  },
+  "K2Overlay/maxWidth": {
+    "type": "string\n",
+    "description": "Specify the max-width."
+  },
+  "K2Overlay/maxHeight": {
+    "type": "string\n",
+    "description": "Specify the max-height."
+  },
+  "K2Overlay/minWidth": {
+    "type": "string\n",
+    "description": "Specify the min-width."
+  },
+  "K2Overlay/minHeight": {
+    "type": "string\n",
+    "description": "Specify the min-height."
+  },
+  "K2Overlay/overflow": {
+    "type": "string\n",
+    "description": "Specify the overflow mode."
+  },
+  "K2Overlay/color": {
+    "type": "string\n",
+    "description": "Specify the background-color."
+  },
+  "K2Overlay/position": {
+    "type": "string\n",
+    "description": "Specify the position style."
+  },
+  "K2Overlay/top": {
+    "type": "string\n",
+    "description": "Specify the top style."
+  },
+  "K2Overlay/left": {
+    "type": "string\n",
+    "description": "Specify the left style."
+  },
+  "K2Overlay/bottom": {
+    "type": "string\n",
+    "description": "Specify the bottom style."
+  },
+  "K2Overlay/right": {
+    "type": "string\n",
+    "description": "Specify the right style."
+  },
+  "K2Overlay/zIndex": {
+    "type": "string\n",
+    "description": "Specify the z-index style."
+  },
+  "K2Overlay/preventOverflow": {
+    "type": "boolean\n",
+    "description": "Control the scrollbar is show or hidden when overlay is pop up."
+  },
+  "K3Overlay/attachTo": {
+    "type": "string\n",
+    "description": "Specify the dom to teleport this component's real dom, default body."
+  },
+  "K3Overlay/transition": {
+    "type": "string\n",
+    "description": "Specify the transition class, default kfade which has been defined in KStyle."
+  },
+  "K3Overlay/model": {
+    "type": "boolean\n",
+    "description": "Specify the dom is show or hidden."
+  },
+  "K3Overlay/width": {
+    "type": "string\n",
+    "description": "Specify the width."
+  },
+  "K3Overlay/height": {
+    "type": "string\n",
+    "description": "Specify the height."
+  },
+  "K3Overlay/maxWidth": {
+    "type": "string\n",
+    "description": "Specify the max-width."
+  },
+  "K3Overlay/maxHeight": {
+    "type": "string\n",
+    "description": "Specify the max-height."
+  },
+  "K3Overlay/minWidth": {
+    "type": "string\n",
+    "description": "Specify the min-width."
+  },
+  "K3Overlay/minHeight": {
+    "type": "string\n",
+    "description": "Specify the min-height."
+  },
+  "K3Overlay/overflow": {
+    "type": "string\n",
+    "description": "Specify the overflow mode."
+  },
+  "K3Overlay/color": {
+    "type": "string\n",
+    "description": "Specify the background-color."
+  },
+  "K3Overlay/position": {
+    "type": "string\n",
+    "description": "Specify the position style."
+  },
+  "K3Overlay/top": {
+    "type": "string\n",
+    "description": "Specify the top style."
+  },
+  "K3Overlay/left": {
+    "type": "string\n",
+    "description": "Specify the left style."
+  },
+  "K3Overlay/bottom": {
+    "type": "string\n",
+    "description": "Specify the bottom style."
+  },
+  "K3Overlay/right": {
+    "type": "string\n",
+    "description": "Specify the right style."
+  },
+  "K3Overlay/zIndex": {
+    "type": "string\n",
+    "description": "Specify the z-index style."
+  },
+  "K3Overlay/preventOverflow": {
+    "type": "boolean\n",
+    "description": "Control the scrollbar is show or hidden when overlay is pop up."
+  },
+  "KBtn/textColor": {
+    "type": "string\n",
+    "description": "Specify text color."
+  },
+  "KBtn/color": {
+    "type": "string\n",
+    "description": "Specify background color."
+  },
+  "KBtn/width": {
+    "type": "string\n",
+    "description": "Specify width."
+  },
+  "KBtn/height": {
+    "type": "string\n",
+    "description": "Specify height."
+  },
+  "KBtn/radius": {
+    "type": "string\n",
+    "description": "Specify border radius."
+  },
+  "KBtn/hoverClass": {
+    "type": "string\n",
+    "description": "Specify class when mouseover."
+  },
+  "KBtn/leaveClass": {
+    "type": "string\n",
+    "description": "Specify class when mouseout."
+  },
+  "KDivider/color": {
+    "type": "string\n",
+    "description": "Specify color."
+  },
+  "KDivider/width": {
+    "type": "string\n",
+    "description": "Specify width."
+  },
+  "KDivider/height": {
+    "type": "string\n",
+    "description": "Specify height."
+  },
+  "KDivider/margin": {
+    "type": "string\n",
+    "description": "Specify margin."
+  },
+  "KSheet/color": {
+    "type": "string\n",
+    "description": "Specify the background-color of sheet."
+  },
+  "KSheet/maxWidth": {
+    "type": "string\n",
+    "description": "Specify the max-width."
+  },
+  "KSheet/maxHeight": {
+    "type": "string\n",
+    "description": "Specify the max-height."
+  },
+  "KSheet/minWidth": {
+    "type": "string\n",
+    "description": "Specify the min-width."
+  },
+  "KSheet/minHeight": {
+    "type": "string\n",
+    "description": "Specify the min-height."
+  },
+  "KSheet/width": {
+    "type": "string\n",
+    "description": "Specify width."
+  },
+  "KSheet/height": {
+    "type": "string\n",
+    "description": "Specify height."
+  },
+  "KSheet/overflow": {
+    "type": "string\n",
+    "description": "Specify overflow style."
+  }
+}

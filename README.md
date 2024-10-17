@@ -1,10 +1,17 @@
-适用于 [vue2](https://v2.vuejs.org/) 和 [vue3](https://vuejs.org/) 的 `VExpandTransition` 等 组件
+适用于 [vue2](https://v2.vuejs.org/) 和 [vue3](https://vuejs.org/) 的 `VExpandTransition` 等 组件，
+使用vscode等idea工具以具备更加完善的代码提示特性✨
 
 ## 基础使用
 
 基于模块化开发：
 
    1. 首先，引入组件
+      ```shell
+      # 1.2.0 以前的版本存在严重bug，因此尽量不要使用
+      # 使用yarn或npm等包管理器安装最新版本的kcvex，新版本具备更完善的代码提示
+      yarn add kcvex
+      ```
+   2. 在项目中使用   
       ```javascript
       // 适用于 vue2
       import VExpandTransition from 'kcvex/kc/K2ExpandTransition.vue'

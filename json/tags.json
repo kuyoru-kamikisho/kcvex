@@ -1,0 +1,96 @@
+{
+  "K2ExpandTransition": {
+    "attributes": [
+      "direction",
+      "mode"
+    ],
+    "description": ""
+  },
+  "K3ExpandTransition": {
+    "attributes": [
+      "direction",
+      "mode"
+    ],
+    "description": ""
+  },
+  "K2Overlay": {
+    "attributes": [
+      "attachTo",
+      "transition",
+      "model",
+      "width",
+      "height",
+      "maxWidth",
+      "maxHeight",
+      "minWidth",
+      "minHeight",
+      "overflow",
+      "color",
+      "position",
+      "top",
+      "left",
+      "bottom",
+      "right",
+      "zIndex",
+      "preventOverflow"
+    ],
+    "description": ""
+  },
+  "K3Overlay": {
+    "attributes": [
+      "attachTo",
+      "transition",
+      "model",
+      "width",
+      "height",
+      "maxWidth",
+      "maxHeight",
+      "minWidth",
+      "minHeight",
+      "overflow",
+      "color",
+      "position",
+      "top",
+      "left",
+      "bottom",
+      "right",
+      "zIndex",
+      "preventOverflow"
+    ],
+    "description": ""
+  },
+  "KBtn": {
+    "attributes": [
+      "textColor",
+      "color",
+      "width",
+      "height",
+      "radius",
+      "hoverClass",
+      "leaveClass"
+    ],
+    "description": ""
+  },
+  "KDivider": {
+    "attributes": [
+      "color",
+      "width",
+      "height",
+      "margin"
+    ],
+    "description": ""
+  },
+  "KSheet": {
+    "attributes": [
+      "color",
+      "maxWidth",
+      "maxHeight",
+      "minWidth",
+      "minHeight",
+      "width",
+      "height",
+      "overflow"
+    ],
+    "description": ""
+  }
+}

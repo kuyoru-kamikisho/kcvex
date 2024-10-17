@@ -1,6 +1,6 @@
 {
   "name": "kcvex",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "适用于vue2和vue3的抽屉动画等组件，帮助您快速搭建基础布局",
   "private": false,
   "type": "module",
@@ -24,6 +24,7 @@
   },
   "files": [
     "./kc",
+    "./json",
     "./README.md",
     "LICENSE"
   ],
@@ -40,5 +41,9 @@
     },
     "./*": "./*"
   },
-  "packageManager": "yarn@4.4.1"
+  "packageManager": "yarn@4.4.1",
+  "vetur": {
+    "tags": "json/tags.json",
+    "attributes": "json/attributes.json"
+  }
 }
