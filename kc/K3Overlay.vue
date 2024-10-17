@@ -1,4 +1,4 @@
-<script lang="ts">
+<script>
 export default {
   name: 'KOverlay',
   props: {
@@ -70,7 +70,7 @@ export default {
 }
 </script>
 <template>
-  <transition :name="animate">
+  <transition :name="transition">
     <teleport v-if="model" :to="attachTo">
       <div class="k-overlay" :style="styles">
         <slot></slot>

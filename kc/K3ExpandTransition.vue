@@ -1,18 +1,17 @@
-<script setup lang="ts">
-import {camelize, type PropType} from 'vue'
-import type {HTMLExpandElement} from "v3/src/types";
+<script setup>
+import {camelize} from 'vue'
 
 const props = defineProps({
-  direction: {type: String as PropType<'x' | 'y'>, default: 'y'},
-  mode: {type: String as PropType<'out-in' | 'in-out'>, default: "out-in"}
+  direction: {type: String, default: 'y'},
+  mode: {type: String, default: "out-in"}
 });
 
 const transitionClass = `expand-${props.direction}-transition`
-const sizeProperty = props.direction === 'x' ? 'width' : 'height' as 'width' | 'height'
-const offsetProperty = camelize(`offset-${sizeProperty}`) as 'offsetHeight' | 'offsetWidth'
+const sizeProperty = props.direction === 'x' ? 'width' : 'height'
+const offsetProperty = camelize(`offset-${sizeProperty}`)
 
-function onBeforeEnter(el: HTMLExpandElement) {
-  el._parent = el.parentNode as (Node & ParentNode & HTMLElement) | null
+function onBeforeEnter(el) {
+  el._parent = el.parentNode
   el._initialStyle = {
     transition: el.style.transition,
     overflow: el.style.overflow,
@@ -20,8 +19,8 @@ function onBeforeEnter(el: HTMLExpandElement) {
   }
 }
 
-function onEnter(el: HTMLExpandElement) {
-  const initialStyle = el._initialStyle!
+function onEnter(el) {
+  const initialStyle = el._initialStyle
 
   el.style.setProperty('transition', 'none', 'important')
   // Hide overflow to account for collapsed margins in the calculated height
@@ -40,7 +39,7 @@ function onEnter(el: HTMLExpandElement) {
   })
 }
 
-function onLeave(el: HTMLExpandElement) {
+function onLeave(el) {
   el._initialStyle = {
     transition: '',
     overflow: el.style.overflow,
@@ -54,13 +53,13 @@ function onLeave(el: HTMLExpandElement) {
   requestAnimationFrame(() => (el.style[sizeProperty] = '0'))
 }
 
-function onAfterLeave(el: HTMLExpandElement) {
+function onAfterLeave(el) {
   resetStyles(el)
 }
 
-function resetStyles(el: HTMLExpandElement) {
-  const size = el._initialStyle![sizeProperty]
-  el.style.overflow = el._initialStyle!.overflow
+function resetStyles(el) {
+  const size = el._initialStyle[sizeProperty]
+  el.style.overflow = el._initialStyle.overflow
   if (size != null) el.style[sizeProperty] = size
   el.classList.remove(transitionClass)
   delete el._initialStyle

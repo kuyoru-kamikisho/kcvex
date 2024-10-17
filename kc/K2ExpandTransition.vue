@@ -1,5 +1,5 @@
-<script lang="ts">
-import {type HTMLExpandElement, upperFirst} from "../v2/src/expandUtil";
+<script>
+import {upperFirst} from "./tools.js"
 
 export default {
   props: {
@@ -11,15 +11,15 @@ export default {
       return this.direction === 'x' ? 'width' : 'height'
     },
     willOffsetProperty() {
-      return `offset${upperFirst(this.willSizeProperty)}` as 'offsetHeight' | 'offsetWidth'
+      return `offset${upperFirst(this.willSizeProperty)}`
     },
     transitionClass() {
       return `expand-${this.direction}-transition`
     }
   },
   methods: {
-    beforeEnter(el: HTMLExpandElement) {
-      el._parent = el.parentNode as (Node & ParentNode & HTMLElement) | null
+    beforeEnter(el) {
+      el._parent = el.parentNode
       el._initialStyle = {
         transition: el.style.transition,
         overflow: el.style.overflow,
@@ -27,8 +27,8 @@ export default {
       }
     },
 
-    enter(el: HTMLExpandElement) {
-      const initialStyle = el._initialStyle!
+    enter(el) {
+      const initialStyle = el._initialStyle
 
       el.style.setProperty('transition', 'none', 'important')
       // Hide overflow to account for collapsed margins in the calculated height
@@ -46,7 +46,7 @@ export default {
       })
     },
 
-    leave(el: HTMLExpandElement) {
+    leave(el) {
       el._initialStyle = {
         transition: '',
         overflow: el.style.overflow,
@@ -61,13 +61,13 @@ export default {
       requestAnimationFrame(() => (el.style[this.willSizeProperty] = '0'))
     },
 
-    afterLeave(el: HTMLExpandElement) {
+    afterLeave(el) {
       this.resetStyles(el)
     },
 
-    resetStyles(el: HTMLExpandElement) {
-      const size = el._initialStyle![this.willSizeProperty]
-      el.style.overflow = el._initialStyle!.overflow
+    resetStyles(el) {
+      const size = el._initialStyle[this.willSizeProperty]
+      el.style.overflow = el._initialStyle.overflow
       if (size != null) el.style[this.willSizeProperty] = size
       el.classList.remove(this.transitionClass)
       delete el._initialStyle
