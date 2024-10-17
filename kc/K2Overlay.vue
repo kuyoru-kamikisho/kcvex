@@ -31,6 +31,7 @@ export default {
   }),
   methods: {
     attachEl() {
+      if (!this.attachTo) return
       const targetDom = document.querySelector(this.attachTo)
       if (targetDom === null) {
         console.warn(`Can't find target Dom: ${this.attachTo}`)
