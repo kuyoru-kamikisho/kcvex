@@ -1,19 +1,13 @@
-import K2ExpandTransition from './kc/K2ExpandTransition.vue'
-import K3ExpandTransition from './kc/K3ExpandTransition.vue'
-import K2Overlay from "./kc/K2Overlay.vue";
-import K3Overlay from "./kc/K3Overlay3.vue";
-import KBtn from "./kc/K2Btn.vue";
-import KDivider from "./kc/K2Divider.vue";
-import KSheet from "./kc/K2Sheet.vue";
-import KStyle from "./kc/KStyle.vue";
+export K2Btn from './kc/K2Btn.vue'
+export K2Divider from './kc/K2Divider.vue'
+export K2ExpandTransition from './kc/K2ExpandTransition.vue'
+export K2Overlay from './kc/K2Overlay.vue'
+export K2Sheet from './kc/K2Sheet.vue'
 
-export {
-    K2ExpandTransition,
-    K3ExpandTransition,
-    K2Overlay,
-    K3Overlay,
-    KBtn,
-    KDivider,
-    KSheet,
-    KStyle
-}
+export K3Btn from './kc/K3Btn.vue'
+export K3Divider from './kc/K3Divider.vue'
+export K3ExpandTransition from './kc/K3ExpandTransition.vue'
+export K3Overlay from './kc/K3Overlay.vue'
+export K3Sheet from './kc/K3Sheet.vue'
+
+export KStyle from './kc/KStyle.vue'

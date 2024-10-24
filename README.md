@@ -1,6 +1,24 @@
 适用于 [vue2](https://v2.vuejs.org/) 和 [vue3](https://vuejs.org/) 的 `VExpandTransition` 等 组件，
 使用vscode等idea工具以具备更加完善的代码提示特性✨
 
+<!-- TOC -->
+  * [基础使用](#基础使用)
+  * [部件文档](#部件文档)
+    * [v2](#v2)
+      * [K2ExpandTransition](#k2expandtransition)
+      * [K2Btn](#k2btn)
+      * [K2Divider](#k2divider)
+      * [K2Overlay](#k2overlay)
+      * [K2Sheet](#k2sheet)
+    * [v3](#v3)
+      * [K3ExpandTransition](#k3expandtransition)
+      * [K3Btn](#k3btn)
+      * [K3Divider](#k3divider)
+      * [K3Overlay](#k3overlay)
+      * [K3Sheet](#k3sheet)
+      * [KStyle](#kstyle)
+<!-- TOC -->
+
 ## 基础使用
 
 基于模块化开发：
@@ -46,51 +64,57 @@
 
 所有组件的样式都是开放式的（未scoped化），因此您可以根据需要调整样式。
 
-### [K2ExpandTransition](./kc/K2ExpandTransition.vue)
+### v2
+
+#### [K2Btn](./kc/K2Btn.vue)
+
+`强化版 button` 组件，可快速设置一定的样式，详情可以看该组件的 props，提供默认插槽
+
+#### [K2Divider](./kc/K2Divider.vue)
+
+`分割线` 组件，可快速设置一定的样式，详情可以看该组件的 props
+
+#### [K2ExpandTransition](./kc/K2ExpandTransition.vue)
 
 适用于任何 vue 版本 的`抽屉伸缩展开渐变动画组件`，提供默认插槽，
 与`K3ExpandTransition`具备完全相同的props
 
-### [K3ExpandTransition](./kc/K3ExpandTransition.vue)
-
-支持setup 的任意vue版本 的`抽屉伸缩展开渐变动画组件`，提供默认插槽，
-与`K2ExpandTransition`具备完全相同的props
-
-### [K2Btn](./kc/K2Btn.vue)
-
-`强化版 button` 组件，可快速设置一定的样式，详情可以看该组件的 props，提供默认插槽
-
-### [K3Btn](./kc/K3Btn.vue)
-
-`强化版 button` 组件，可快速设置一定的样式，详情可以看该组件的 props，提供默认插槽
-
-### [K2Divider](./kc/K2Divider.vue)
-
-`分割线` 组件，可快速设置一定的样式，详情可以看该组件的 props
-
-### [K3Divider](./kc/K3Divider.vue)
-
-`分割线` 组件，可快速设置一定的样式，详情可以看该组件的 props
-
-### [K2Overlay](./kc/K2Overlay.vue)
+#### [K2Overlay](./kc/K2Overlay.vue)
 
 `遮罩` 组件，可快速设置一定的样式，支持跨Dom结构进行渲染，详情可以看该组件的 props，提供默认插槽
 与`K3Overlay`拥有完全相同的props
 
-### [K3Overlay](./kc/K3Overlay3.vue)
+#### [K2Sheet](./kc/K2Sheet.vue)
+
+`强化版 div` 组件，可快速设置一定的样式，详情可以看该组件的 props，提供默认插槽
+
+### v3
+
+#### [K3Btn](./kc/K3Btn.vue)
+
+`强化版 button` 组件，可快速设置一定的样式，详情可以看该组件的 props，提供默认插槽
+
+#### [K3Divider](./kc/K3Divider.vue)
+
+`分割线` 组件，可快速设置一定的样式，详情可以看该组件的 props
+
+#### [K3ExpandTransition](./kc/K3ExpandTransition.vue)
+
+支持setup 的任意vue版本 的`抽屉伸缩展开渐变动画组件`，提供默认插槽，
+与`K2ExpandTransition`具备完全相同的props
+
+#### [K3Overlay](./kc/K3Overlay.vue)
 
 `遮罩` 组件，可快速设置一定的样式，支持跨Dom结构进行渲染，详情可以看该组件的 props，提供默认插槽
 与`K2Overlay`拥有完全相同的props
 
-### [K2Sheet](./kc/K2Sheet.vue)
+#### [K3Sheet](./kc/K3Sheet.vue)
 
 `强化版 div` 组件，可快速设置一定的样式，详情可以看该组件的 props，提供默认插槽
 
-### [K3Sheet](./kc/K3Sheet.vue)
+### v2&v3
 
-`强化版 div` 组件，可快速设置一定的样式，详情可以看该组件的 props，提供默认插槽
-
-### [KStyle](./kc/KStyle.vue)
+#### [KStyle](./kc/KStyle.vue)
 
 `快捷样式表` 组件，提供大量易于记忆的常用样式切片，详情可以看该组件的 style 标签，提供默认插槽，
 一些布局组件也用到了这里面的样式类，比如 `KBtn` 的默认阴影效果。
