@@ -1,11 +1,8 @@
-<template>
-  <div class="k-divider" :style="style"></div>
-</template>
-
 <script>
 export default {
   name: "KDivider",
   props: {
+    tag: {type: String, default: 'div'},
     color: {type: String, default: 'rgb(29,129,244)'},
     width: {type: String, default: '100%'},
     height: {type: String, default: '2px'},
@@ -18,6 +15,12 @@ export default {
               height:${this.height};
               margin:${this.margin};`
     }
+  },
+  render(h) {
+    return h(this.tag || 'div', {
+      class: 'k-divider',
+      style: this.style,
+    })
   }
 }
 </script>

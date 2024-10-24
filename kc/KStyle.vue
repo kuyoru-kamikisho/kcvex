@@ -173,6 +173,14 @@ export default {
   display: inline-block;
 }
 
+.box-sizing-border {
+  box-sizing: border-box;
+}
+
+.box-sizing-content {
+  box-sizing: content-box;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;

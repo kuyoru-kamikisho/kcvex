@@ -2,6 +2,9 @@
 import {ref} from "vue";
 import VExpandTransition from "../../kc/K3ExpandTransition.vue";
 import KOverlay from "../../kc/K3Overlay.vue";
+import KBtn from '../../kc/K3Btn.vue'
+import KSheet from '../../kc/K3Sheet.vue'
+import KDivider from '../../kc/K3Divider.vue'
 import KStyle from "../../kc/KStyle.vue";
 
 const xss = ref([true, true])
@@ -10,9 +13,10 @@ const ovl = ref(false)
 
 <template>
   <k-style class="container">
+    <k-divider height="4px"></k-divider>
     <button @click="xss[0]=!xss[0]">X测试</button>
     <button @click="xss[1]=!xss[1]">Y测试</button>
-    <button @click="ovl=true">遮罩测试</button>
+    <k-btn height="24px" @click="ovl=true">遮罩测试</k-btn>
     <k-overlay :model="ovl">
       <button @click="ovl=false">关闭遮罩</button>
     </k-overlay>
@@ -32,6 +36,7 @@ const ovl = ref(false)
         </v-expand-transition>
       </div>
     </div>
+    <k-sheet color="blue" height="12px"></k-sheet>
   </k-style>
 </template>
 

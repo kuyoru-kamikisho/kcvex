@@ -2,6 +2,7 @@
 export default {
   name: "KOverlay",
   props: {
+    tag: {type: String, default: 'div'},
     attachTo: {type: String, default: 'body'},
     transition: {type: String, default: 'kfade'},
     model: {type: Boolean, default: true},
@@ -64,7 +65,7 @@ export default {
       attrs: {
         name: this.transition
       }
-    }, [h("div", {
+    }, [h(this.tag || 'div', {
       staticClass: 'k-overlay',
       style: {
         width: this.width,
