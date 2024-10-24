@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import K2Sheet from 'kcvex/kc/K2Sheet.vue'
+import {K2Sheet} from 'kcvex/v2'
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 </script>
