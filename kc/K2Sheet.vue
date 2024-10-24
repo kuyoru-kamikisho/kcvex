@@ -1,13 +1,8 @@
-<template>
-  <div class="k-sheet" :style="style">
-    <slot></slot>
-  </div>
-</template>
-
 <script>
 export default {
   name: "KSheet",
   props: {
+    tag: {type: String, default: 'div'},
     color: {type: String, default: ''},
     maxWidth: {type: String, default: ''},
     maxHeight: {type: String, default: ''},
@@ -28,6 +23,12 @@ export default {
               min-width:${this.minWidth};
               min-height:${this.minHeight};`
     }
+  },
+  render(h) {
+    return h(this.tag || 'div', {
+      class: 'k-sheet',
+      style: this.style,
+    }, this.$slots.default)
   }
 }
 </script>

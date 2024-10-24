@@ -1,13 +1,3 @@
-<template>
-  <button class="k-btn"
-          :style="style"
-          :class="hovered?hoverClass:leaveClass"
-          @mouseenter="hovered=true"
-          @mouseleave="hovered=false">
-    <slot></slot>
-  </button>
-</template>
-
 <script>
 export default {
   name: "KBtn",
@@ -15,6 +5,7 @@ export default {
     hovered: false
   }),
   props: {
+    tag: {type: String, default: 'button'},
     textColor: {type: String, default: 'white'},
     color: {type: String, default: '#1f9deb'},
     width: {type: String, default: '72px'},
@@ -31,6 +22,21 @@ export default {
               color:${this.textColor};
               border-radius:${this.radius};`
     }
+  },
+  render(h) {
+    return h(this.tag || 'button', {
+      class: ['k-btn', this.hovered ? this.hoverClass : this.leaveClass],
+      style: this.style,
+      on: {
+        mouseenter: () => {
+          this.hovered = true
+        },
+        mouseleave: () => {
+          this.hovered = false
+        },
+        ...this.$listeners
+      },
+    }, this.$slots.default);
   }
 }
 </script>

@@ -5,9 +5,11 @@ import KStyle from "../../kc/KStyle.vue";
 // @ts-ignore
 import KOverlay from "../../kc/K2Overlay.vue";
 // @ts-ignore
-import KSheet from "../../kc/KSheet.vue";
+import KDivider from "../../kc/K2Divider.vue";
 // @ts-ignore
-import KBtn from "../../kc/KBtn.vue";
+import KSheet from "../../kc/K2Sheet.vue";
+// @ts-ignore
+import KBtn from "../../kc/K2Btn.vue";
 import {ref} from "vue";
 
 const fox = ref(true)
@@ -17,6 +19,7 @@ const ovl = ref(false)
 
 <template>
   <div class="box">
+    <k-divider width="200px" class="position-absolute"></k-divider>
     <div>
       <button @click="fox=!fox">x方向</button>
       <button @click="foy=!foy">y方向</button>

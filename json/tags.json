@@ -1,66 +1,7 @@
 {
-  "K2ExpandTransition": {
+  "K2Btn": {
     "attributes": [
-      "direction",
-      "mode"
-    ],
-    "description": ""
-  },
-  "K3ExpandTransition": {
-    "attributes": [
-      "direction",
-      "mode"
-    ],
-    "description": ""
-  },
-  "K2Overlay": {
-    "attributes": [
-      "attachTo",
-      "transition",
-      "model",
-      "width",
-      "height",
-      "maxWidth",
-      "maxHeight",
-      "minWidth",
-      "minHeight",
-      "overflow",
-      "color",
-      "position",
-      "top",
-      "left",
-      "bottom",
-      "right",
-      "zIndex",
-      "preventOverflow"
-    ],
-    "description": ""
-  },
-  "K3Overlay": {
-    "attributes": [
-      "attachTo",
-      "transition",
-      "model",
-      "width",
-      "height",
-      "maxWidth",
-      "maxHeight",
-      "minWidth",
-      "minHeight",
-      "overflow",
-      "color",
-      "position",
-      "top",
-      "left",
-      "bottom",
-      "right",
-      "zIndex",
-      "preventOverflow"
-    ],
-    "description": ""
-  },
-  "KBtn": {
-    "attributes": [
+      "tag",
       "textColor",
       "color",
       "width",
@@ -71,8 +12,9 @@
     ],
     "description": ""
   },
-  "KDivider": {
+  "K2Divider": {
     "attributes": [
+      "tag",
       "color",
       "width",
       "height",
@@ -80,8 +22,108 @@
     ],
     "description": ""
   },
-  "KSheet": {
+  "K2ExpandTransition": {
     "attributes": [
+      "direction",
+      "mode"
+    ],
+    "description": ""
+  },
+  "K2Overlay": {
+    "attributes": [
+      "tag",
+      "attachTo",
+      "transition",
+      "model",
+      "width",
+      "height",
+      "maxWidth",
+      "maxHeight",
+      "minWidth",
+      "minHeight",
+      "overflow",
+      "color",
+      "position",
+      "top",
+      "left",
+      "bottom",
+      "right",
+      "zIndex",
+      "preventOverflow"
+    ],
+    "description": ""
+  },
+  "K2Sheet": {
+    "attributes": [
+      "tag",
+      "color",
+      "maxWidth",
+      "maxHeight",
+      "minWidth",
+      "minHeight",
+      "width",
+      "height",
+      "overflow"
+    ],
+    "description": ""
+  },
+  "K3Btn": {
+    "attributes": [
+      "tag",
+      "textColor",
+      "color",
+      "width",
+      "height",
+      "radius",
+      "hoverClass",
+      "leaveClass"
+    ],
+    "description": ""
+  },
+  "K3Divider": {
+    "attributes": [
+      "tag",
+      "color",
+      "width",
+      "height",
+      "margin"
+    ],
+    "description": ""
+  },
+  "K3ExpandTransition": {
+    "attributes": [
+      "direction",
+      "mode"
+    ],
+    "description": ""
+  },
+  "K3Overlay": {
+    "attributes": [
+      "tag",
+      "attachTo",
+      "transition",
+      "model",
+      "width",
+      "height",
+      "maxWidth",
+      "maxHeight",
+      "minWidth",
+      "minHeight",
+      "overflow",
+      "color",
+      "position",
+      "top",
+      "left",
+      "bottom",
+      "right",
+      "zIndex",
+      "preventOverflow"
+    ],
+    "description": ""
+  },
+  "K3Sheet": {
+    "attributes": [
+      "tag",
       "color",
       "maxWidth",
       "maxHeight",
