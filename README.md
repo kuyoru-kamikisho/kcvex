@@ -2,62 +2,69 @@
 使用vscode等idea工具以具备更加完善的代码提示特性✨
 
 <!-- TOC -->
-  * [基础使用](#基础使用)
-  * [部件文档](#部件文档)
+
+* [基础使用](#基础使用)
+* [部件文档](#部件文档)
     * [v2](#v2)
-      * [K2Btn](#k2btn)
-      * [K2Divider](#k2divider)
-      * [K2ExpandTransition](#k2expandtransition)
-      * [K2Overlay](#k2overlay)
-      * [K2Sheet](#k2sheet)
+        * [K2Btn](#k2btn)
+        * [K2Divider](#k2divider)
+        * [K2ExpandTransition](#k2expandtransition)
+        * [K2Overlay](#k2overlay)
+        * [K2Sheet](#k2sheet)
     * [v3](#v3)
-      * [K3Btn](#k3btn)
-      * [K3Divider](#k3divider)
-      * [K3ExpandTransition](#k3expandtransition)
-      * [K3Overlay](#k3overlay)
-      * [K3Sheet](#k3sheet)
-    * [v2&v3](#v2v3)
-      * [KStyle](#kstyle)
+        * [K3Btn](#k3btn)
+        * [K3Divider](#k3divider)
+        * [K3ExpandTransition](#k3expandtransition)
+        * [K3Overlay](#k3overlay)
+        * [K3Sheet](#k3sheet)
+    * [关于样式表切片](#关于样式表切片)
+
 <!-- TOC -->
 
 ## 基础使用
 
 基于模块化开发：
 
-   1. 首先，引入组件
-      ```shell
-      # 1.2.0 以前的版本存在严重bug，因此尽量不要使用
-      # 1.3.0 以后的版本开始，一些之前可以在vue2和vue3通用的组件将不再通用，因此需要格外注意
-      # 使用yarn或npm等包管理器安装最新版本的kcvex，新版本具备更完善的代码提示
-      yarn add kcvex
-      ```
-   2. 在项目中使用   
-      ```javascript
-      // 适用于 vue2
-      import VExpandTransition from 'kcvex/kc/K2ExpandTransition.vue'
-      
-      // 适用于 vue3
-      import VExpandTransition from 'kcvex/kc/K3ExpandTransition.vue'
-      
-      // 如果您不喜欢上面这种导入方式，可以尝试下面的方式
-      // 简化版导入 (v2) 注意此时的名称
-      import { K2ExpandTransition } from 'kcvex/v2'
-      // 简化版导入 (v3) 注意此时的名称
-      import { K3ExpandTransition } from 'kcvex/v3'
-      ```
-      ```javascript
-      // 选项式组件
-      ...
-      component:{ VExpandTransition }
-      ...
-      ```
-   2. 在模板中使用
-      ```html
-      <v-expand-transition>
-        ...
-      </v-expand-transition>
-      ```
-      
+1. 首先，引入组件
+   ```shell
+   # 1.2.0 以前的版本存在严重bug，因此尽量不要使用
+   # 1.3.0 以后的版本开始，一些之前可以在vue2和vue3通用的组件将不再通用，因此需要格外注意
+   # 1.4.0 以后开始将废弃 KStyle 组件
+   # 使用yarn或npm等包管理器安装最新版本的kcvex，新版本具备更完善的代码提示
+   yarn add kcvex
+   # 或
+   npm install kcvex
+   ```
+2. 在项目中使用
+   ```javascript
+   // 按需要导入样式表，也许只有在组件的样式出现问题时您可能才需要导入，推荐导入
+   import 'kcvex/style'
+   
+   // 简化版导入 (v2) 注意此时的名称
+   import { K2ExpandTransition } from 'kcvex/v2'
+   // 简化版导入 (v3) 注意此时的名称
+   import { K3ExpandTransition } from 'kcvex/v3'
+   
+   // 如果您不喜欢上面这种导入方式，可以尝试下面的方式
+   // 适用于 vue2
+   import VExpandTransition from 'kcvex/kc/K2ExpandTransition.vue'
+   
+   // 适用于 vue3
+   import VExpandTransition from 'kcvex/kc/K3ExpandTransition.vue'
+   ```
+   ```javascript
+   // 选项式组件
+   ...
+   component:{ VExpandTransition }
+   ...
+   ```
+2. 在模板中使用
+   ```html
+   <v-expand-transition>
+     ...
+   </v-expand-transition>
+   ```
+
 ## 部件文档
 
 关于所有小部件，下面的简易文档可能并不会及时更新，
@@ -113,9 +120,19 @@
 
 `强化版 div` 组件，可快速设置一定的样式，详情可以看该组件的 props，提供默认插槽
 
-### v2&v3
+### 关于样式表切片
 
-#### [KStyle](./kc/KStyle.vue)
+```js
+import 'kcvex/style'
+```
 
-`快捷样式表` 组件，提供大量易于记忆的常用样式切片，详情可以看该组件的 style 标签，提供默认插槽，
+kcvex 提供大量易于记忆的常用样式切片，详情可以看该组件的 [style列表](./kc/style.js)，
 一些布局组件也用到了这里面的样式类，比如 `KBtn` 的默认阴影效果。
+
+如果您不导入这些切片，则您不可以直接使用这些切片，一些组件的样式可能也会受影响。
+
+当然，为了最终的包大小考虑，您已可以只导入其中的部分样式表，就像下面这样：
+
+```css
+@import "kcvex/kc/style/flex.css";
+```

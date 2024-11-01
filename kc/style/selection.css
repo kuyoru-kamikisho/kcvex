@@ -1,0 +1,16 @@
+.selectable {
+    user-select: auto;
+}
+
+.inselectable {
+    user-select: none;
+}
+
+.textselect {
+    user-select: text;
+}
+
+.allselect {
+    user-select: all;
+}
+

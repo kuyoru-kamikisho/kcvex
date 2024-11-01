@@ -1,7 +1,6 @@
 <script setup lang="ts">
+import '../../kc/style.js'
 import VExpandTransition from "../../kc/K2ExpandTransition.vue";
-// @ts-ignore
-import KStyle from "../../kc/KStyle.vue";
 // @ts-ignore
 import KOverlay from "../../kc/K2Overlay.vue";
 // @ts-ignore
@@ -37,7 +36,6 @@ const ovl = ref(false)
         <div class="fox orange" v-else></div>
       </v-expand-transition>
     </div>
-    <k-style>
       <button @click="ovl=true">打开遮罩</button>
       <!--      <k-sheet color="black" height="2000px">滚动专用</k-sheet>-->
       <k-overlay :model="ovl" bottom="" min-height="100%" position="absolute">
@@ -45,7 +43,6 @@ const ovl = ref(false)
           <k-btn @click.native="ovl=false">关闭遮罩</k-btn>
         </k-sheet>
       </k-overlay>
-    </k-style>
   </div>
 </template>
 

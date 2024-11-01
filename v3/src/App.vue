@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import {ref} from "vue";
+import '../../kc/style.js'
 import VExpandTransition from "../../kc/K3ExpandTransition.vue";
 import KOverlay from "../../kc/K3Overlay.vue";
 import KBtn from '../../kc/K3Btn.vue'
 import KSheet from '../../kc/K3Sheet.vue'
 import KDivider from '../../kc/K3Divider.vue'
-import KStyle from "../../kc/KStyle.vue";
 
 const xss = ref([true, true])
 const ovl = ref(false)
 </script>
 
 <template>
-  <k-style class="container">
+  <div class="container">
     <k-divider height="4px"></k-divider>
     <button @click="xss[0]=!xss[0]">X测试</button>
     <button @click="xss[1]=!xss[1]">Y测试</button>
@@ -37,7 +37,7 @@ const ovl = ref(false)
       </div>
     </div>
     <k-sheet color="blue" height="12px"></k-sheet>
-  </k-style>
+  </div>
 </template>
 
 <style>

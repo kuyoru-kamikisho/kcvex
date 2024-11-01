@@ -1,0 +1,80 @@
+.text-white {
+    color: white;
+}
+
+.text-black {
+    color: black;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.text-break {
+    white-space: break-spaces;
+}
+
+.text-ellipsis {
+    text-overflow: ellipsis;
+}
+
+.text-w600 {
+    font-weight: 600;
+}
+
+.text-w500 {
+    font-weight: 500;
+}
+
+.text-w400 {
+    font-weight: 400;
+}
+
+.text-14 {
+    font-size: 14px;
+}
+
+.text-16 {
+    font-size: 16px;
+}
+
+.text-18 {
+    font-size: 18px;
+}
+
+.text-20 {
+    font-size: 20px;
+}
+
+.text-22 {
+    font-size: 22px;
+}
+
+.text-24 {
+    font-size: 24px;
+}
+
+.text-26 {
+    font-size: 26px;
+}
+
+.text-28 {
+    font-size: 28px;
+}
+
+.text-30 {
+    font-size: 30px;
+}
+
+.text-32 {
+    font-size: 32px;
+}
+
+.text-ltr {
+    direction: ltr;
+}
+
+.text-rtl {
+    direction: rtl;
+}
+
