@@ -10,4 +10,5 @@ import './style/round.css'
 import './style/selection.css'
 import './style/size.css'
 import './style/text.css'
+import './style/overflow.css'
 
