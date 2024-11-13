@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import '../../kc/style.js'
-import VExpandTransition from "../../kc/K2ExpandTransition.vue";
+import VExpandTransition from "../../kc/v2/KExpandTransition.vue";
 // @ts-ignore
-import KOverlay from "../../kc/K2Overlay.vue";
+import KOverlay from "../../kc/v2/KOverlay.vue";
 // @ts-ignore
-import KDivider from "../../kc/K2Divider.vue";
+import KDivider from "../../kc/v2/KDivider.vue";
 // @ts-ignore
-import KSheet from "../../kc/K2Sheet.vue";
+import KSheet from "../../kc/v2/KSheet.vue";
 // @ts-ignore
-import KBtn from "../../kc/K2Btn.vue";
+import KBtn from "../../kc/v2/KBtn.vue";
 import {ref} from "vue";
 
 const fox = ref(true)

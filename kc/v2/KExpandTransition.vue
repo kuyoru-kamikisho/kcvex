@@ -1,5 +1,5 @@
 <script>
-import {upperFirst} from "./tools.js"
+import {upperFirst} from "../tools.js"
 
 export default {
   props: {

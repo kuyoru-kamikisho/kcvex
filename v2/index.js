@@ -1,13 +1,13 @@
-import K2Btn from '../kc/K2Btn.vue'
-import K2Divider from '../kc/K2Divider.vue'
-import K2ExpandTransition from '../kc/K2ExpandTransition.vue'
-import K2Overlay from '../kc/K2Overlay.vue'
-import K2Sheet from '../kc/K2Sheet.vue'
+import KBtn from '../kc/v2/KBtn.vue'
+import KDivider from '../kc/v2/KDivider.vue'
+import KExpandTransition from '../kc/v2/KExpandTransition.vue'
+import KOverlay from '../kc/v2/KOverlay.vue'
+import KSheet from '../kc/v2/KSheet.vue'
 
 export {
-    K2Btn,
-    K2Divider,
-    K2ExpandTransition,
-    K2Overlay,
-    K2Sheet
+    KBtn,
+    KDivider,
+    KExpandTransition,
+    KOverlay,
+    KSheet
 }

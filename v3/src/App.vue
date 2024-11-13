@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import {ref} from "vue";
 import '../../kc/style.js'
-import VExpandTransition from "../../kc/K3ExpandTransition.vue";
-import KOverlay from "../../kc/K3Overlay.vue";
-import KBtn from '../../kc/K3Btn.vue'
-import KSheet from '../../kc/K3Sheet.vue'
-import KDivider from '../../kc/K3Divider.vue'
+import VExpandTransition from "../../kc/v3/KExpandTransition.vue";
+import KOverlay from "../../kc/v3/KOverlay.vue";
+import KBtn from '../../kc/v3/KBtn.vue'
+import KSheet from '../../kc/v3/KSheet.vue'
+import KDivider from '../../kc/v3/KDivider.vue'
 
 const xss = ref([true, true])
 const ovl = ref(false)
