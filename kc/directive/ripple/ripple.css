@@ -9,7 +9,7 @@
     transform-origin: left top;
     transform: scale(0) translate(-50%, -50%);
     transition-property: opacity, transform;
-    transition-duration: var(--ripple-duration, .5s);
+    transition-duration: var(--ripple-duration, .3s);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 
     & > svg {

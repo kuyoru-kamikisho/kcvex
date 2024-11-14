@@ -102,7 +102,7 @@
 | CSS Attribute     | Default Value |
 |-------------------|---------------|
 | --ripple-opacity  | .1            |
-| --ripple-duration | .47           |
+| --ripple-duration | .3            |
 | --ripple-color    | currentColor  |
 
 ### 关于样式表切片
