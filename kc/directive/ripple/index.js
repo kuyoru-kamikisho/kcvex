@@ -31,10 +31,9 @@ function updateRipple(el, binding, b) {
         el.appendChild(div)
         el_overflow = el.style.overflow
         el.style.overflow = "hidden"
-        console.log(e)
         div.style.opacity = "var(--ripple-opacity,.1)"
-        div.style.left = e.pageX - el.offsetLeft + "px"
-        div.style.top = e.pageY - el.offsetTop + "px"
+        div.style.left = e.offsetX + "px"
+        div.style.top = e.offsetY + "px"
         div.style.transform = `scale(${mr}) translate(-50%,-50%)`
     }
     const ufn = e => {

@@ -17,7 +17,7 @@ const ovl = ref(false)
 </script>
 
 <template>
-  <div class="box">
+  <div class="box inselectable">
     <k-divider width="200px" class="position-absolute"></k-divider>
     <div>
       <button @click="fox=!fox">x方向</button>
@@ -43,6 +43,10 @@ const ovl = ref(false)
         <k-btn @click.native="ovl=false">关闭遮罩</k-btn>
       </k-sheet>
     </k-overlay>
+    <k-sheet tag="ul" color="rgba(0,0,0,.2)" class="ripple-test-box">
+      <k-sheet tag="li" class="py-2">指令测试(无)</k-sheet>
+      <k-sheet color="rgba(0,0,0,.4)" v-ripple tag="li" v-for="i in 100" :key="i" class="my-1 box-sizing-border py-2 px-5 position-relative c-pointer">指令测试</k-sheet>
+    </k-sheet>
   </div>
 </template>
 
@@ -52,7 +56,15 @@ const ovl = ref(false)
   justify-content: space-between;
   margin: 40px 120px;
 }
-
+li{
+  list-style: none;
+}
+.ripple-test-box{
+  height: 400px;
+  overflow: auto;
+  transform: translate(-100px) scale(.6);
+  --ripple-opacity: .4;
+}
 button {
   padding: 8px 12px;
 }
