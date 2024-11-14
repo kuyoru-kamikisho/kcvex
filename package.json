@@ -27,7 +27,7 @@
     "./json",
     "./index.js",
     "./README.md",
-    "LICENSE"
+    "./LICENSE"
   ],
   "exports": {
     "./v2": {
@@ -39,11 +39,8 @@
     "./style": {
       "import": "./kc/style.js"
     },
-    "./directive/v2": {
-      "import": "./kc/v2/directive/index.js"
-    },
-    "./directive/v3": {
-      "import": "./kc/v3/directive/index.js"
+    "./directive": {
+      "import": "./kc/directive/index.js"
     }
   },
   "main": "./index.js",

@@ -38,10 +38,14 @@
    ```javascript
    // 按需要导入样式表，也许只有在组件的样式出现问题时您可能才需要导入，推荐导入
    import 'kcvex/style'
-   // vue2:
+   // vue2组件:
    import { KExpandTransition } from 'kcvex/v2'
-   // vue3:
+   
+   // vue3组件:
    import { KExpandTransition } from 'kcvex/v3'
+   
+   // 导入指令:
+   import { Ripple } from 'kcvex/directive'
    ```
    ```javascript
    // 选项式组件
@@ -87,6 +91,8 @@
 ### 指令
 
 #### Ripple
+
+由于指令本身通常是一个对象，因此被设计为vue2和vue3都兼容的。
 
 基于 material design 设计规范衍生的元素点击波纹效果，
 使用该指令可以快速地为指定元素创建点击波纹效果，

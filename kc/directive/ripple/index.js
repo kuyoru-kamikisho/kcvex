@@ -9,6 +9,7 @@ function updateRipple(el, binding, b) {
         "</svg>"
 
     let removeing, leaveing
+    let el_overflow
 
     div.classList.add("k-ripple")
 
@@ -18,6 +19,7 @@ function updateRipple(el, binding, b) {
         div.style.top = ""
         div.style.transform = ""
         div.style.opacity = ""
+        el.style.overflow = el_overflow
     }
     const dfn = e => {
         let len = Math.round(
@@ -27,6 +29,7 @@ function updateRipple(el, binding, b) {
         resE()
         clearTimeout(removeing)
         el.appendChild(div)
+        el_overflow = el.style.overflow
         el.style.overflow = "hidden"
         console.log(e)
         div.style.opacity = "var(--ripple-opacity,.1)"
@@ -76,9 +79,10 @@ function updated(el, binding) {
     updateRipple(el, binding, wasEnabled)
 }
 
-export const Index = {
-    mounted,
-    unmounted
-}
 
-export default Index
+export default {
+    mounted,
+    unmounted,
+    inserted: mounted,
+    unbind: unmounted
+}
