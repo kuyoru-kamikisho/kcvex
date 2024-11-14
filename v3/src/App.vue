@@ -16,15 +16,15 @@ const ovl = ref(false)
     <k-divider height="4px"></k-divider>
     <button @click="xss[0]=!xss[0]">X测试</button>
     <button @click="xss[1]=!xss[1]">Y测试</button>
-    <k-btn height="24px" @click="ovl=true">遮罩测试</k-btn>
+    <k-btn height="24px" @click="ovl=true" v-ripple class="position-relative pa-4">遮罩测试</k-btn>
     <k-overlay :model="ovl">
       <button @click="ovl=false">关闭遮罩</button>
     </k-overlay>
     <div class="test-box">
       <div class="test-unit unit1">
         <v-expand-transition direction="x">
-          <div v-if="xss[0]" class="box1 u-box">
-            X收缩
+          <div v-ripple v-if="xss[0]" class="box1 u-box position-relative">
+            X收缩+Ripple效果
           </div>
         </v-expand-transition>
       </div>

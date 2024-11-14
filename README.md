@@ -4,13 +4,15 @@
 <!-- TOC -->
   * [更新日志](#更新日志)
   * [基础使用](#基础使用)
-  * [部件文档](#部件文档)
+  * [组件](#组件)
     * [Components](#components)
       * [KBtn](#kbtn)
       * [KDivider](#kdivider)
       * [KExpandTransition](#kexpandtransition)
       * [KOverlay](#koverlay)
       * [KSheet](#ksheet)
+    * [指令](#指令)
+      * [Ripple](#ripple)
     * [关于样式表切片](#关于样式表切片)
 <!-- TOC -->
 
@@ -54,7 +56,7 @@
    </k-expand-transition>
    ```
 
-## 部件文档
+## 组件
 
 所有Vue小部件都位于 [kc目录](./kc/)。
 
@@ -81,6 +83,20 @@
 #### KSheet
 
 `强化版 div` 组件，可快速设置一定的样式，详情可以看该组件的 props，提供默认插槽
+
+### 指令
+
+#### Ripple
+
+基于 material design 设计规范衍生的元素点击波纹效果，
+使用该指令可以快速地为指定元素创建点击波纹效果，
+为元素添加以下样式可以设定一些属性
+
+| CSS Attribute     | Default Value |
+|-------------------|---------------|
+| --ripple-opacity  | .1            |
+| --ripple-duration | .47           |
+| --ripple-color    | currentColor  |
 
 ### 关于样式表切片
 

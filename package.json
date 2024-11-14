@@ -1,6 +1,6 @@
 {
   "name": "kcvex",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "适用于vue2和vue3的抽屉动画等组件，帮助您快速搭建基础布局",
   "private": false,
   "type": "module",
@@ -24,8 +24,6 @@
   },
   "files": [
     "./kc",
-    "./v2/index.js",
-    "./v3/index.js",
     "./json",
     "./index.js",
     "./README.md",
@@ -33,13 +31,19 @@
   ],
   "exports": {
     "./v2": {
-      "import": "./v2/index.js"
+      "import": "./kc/v2/index.js"
     },
     "./v3": {
-      "import": "./v3/index.js"
+      "import": "./kc/v3/index.js"
     },
     "./style": {
       "import": "./kc/style.js"
+    },
+    "./directive/v2": {
+      "import": "./kc/v2/directive/index.js"
+    },
+    "./directive/v3": {
+      "import": "./kc/v3/directive/index.js"
     }
   },
   "main": "./index.js",
