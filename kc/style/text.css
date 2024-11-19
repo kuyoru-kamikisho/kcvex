@@ -6,6 +6,12 @@
     color: black;
 }
 
+.text-truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .text-nowrap {
     white-space: nowrap;
 }

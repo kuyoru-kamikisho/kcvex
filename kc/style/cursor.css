@@ -5,3 +5,7 @@
 .c-default {
     cursor: default;
 }
+
+.c-none {
+    pointer-events: none;
+}
