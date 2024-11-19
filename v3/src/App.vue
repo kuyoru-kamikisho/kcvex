@@ -13,7 +13,7 @@ const ovl = ref(false)
 
 <template>
   <div class="container">
-    <k-divider height="4px"></k-divider>
+    <k-divider color="red" height="4px"></k-divider>
     <button @click="xss[0]=!xss[0]">X测试</button>
     <button @click="xss[1]=!xss[1]">Y测试</button>
     <k-btn height="24px" @click="ovl=true" v-ripple class="position-relative pa-4">遮罩测试</k-btn>
@@ -36,7 +36,7 @@ const ovl = ref(false)
         </v-expand-transition>
       </div>
     </div>
-    <k-sheet color="blue" height="12px"></k-sheet>
+    <k-sheet color="blue" height="14px"></k-sheet>
   </div>
 </template>
 

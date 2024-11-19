@@ -1,38 +1,40 @@
-<script setup>
-import {getCurrentInstance, useSlots, h, ref} from 'vue'
+<script>
+import {useSlots, h, ref, defineComponent} from 'vue'
 
-const vm = getCurrentInstance()
-const slots = useSlots()
+export default defineComponent({
+  props: {
+    tag: {type: String, default: 'button'},
+    textColor: {type: String, default: 'white'},
+    color: {type: String, default: '#1f9deb'},
+    width: {type: String, default: '72px'},
+    height: {type: String, default: '40px'},
+    radius: {type: String, default: '4px'},
+    hoverClass: {type: String, default: 'elevation-4'},
+    leaveClass: {type: String, default: 'elevation-2'},
+  },
+  setup(props) {
+    const slots = useSlots()
 
-const hovered = ref(false)
+    const hovered = ref(false)
 
-const props = defineProps({
-  tag: {type: String, default: 'button'},
-  textColor: {type: String, default: 'white'},
-  color: {type: String, default: '#1f9deb'},
-  width: {type: String, default: '72px'},
-  height: {type: String, default: '40px'},
-  radius: {type: String, default: '4px'},
-  hoverClass: {type: String, default: 'elevation-4'},
-  leaveClass: {type: String, default: 'elevation-2'},
+    return () => h(props.tag || 'button', {
+      class: ['k-btn', hovered.value ? props.hoverClass : props.leaveClass],
+      style: {
+        'background-color': props.color,
+        width: props.width,
+        height: props.height,
+        color: props.textColor,
+        'border-radius': props.radius,
+      },
+      onMouseenter() {
+        hovered.value = true
+      },
+      onMouseleave() {
+        hovered.value = false
+      },
+    }, slots.default?.())
+  }
 })
-
-vm.render = () => h(props.tag || 'button', {
-  class: ['k-btn', hovered.value ? props.hoverClass : props.leaveClass],
-  style: {
-    'background-color': props.color,
-    width: props.width,
-    height: props.height,
-    color: props.textColor,
-    'border-radius': props.radius,
-  },
-  onMouseenter() {
-    hovered.value = true
-  },
-  onMouseleave() {
-    hovered.value = false
-  },
-}, slots.default?.())
 </script>
 
 <template>
