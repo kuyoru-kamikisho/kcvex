@@ -1,0 +1,27 @@
+.bg-norepeat {
+    background-repeat: no-repeat;
+}
+
+.bg-repeatx {
+    background-repeat: repeat-x;
+}
+
+.bg-repeaty {
+    background-repeat: repeat-y;
+}
+
+.bg-repeat {
+    background-repeat: repeat;
+}
+
+.bg-revert {
+    background-repeat: revert;
+}
+
+.bg-contain {
+    background-size: contain;
+}
+
+.bg-cover {
+    background-size: cover;
+}

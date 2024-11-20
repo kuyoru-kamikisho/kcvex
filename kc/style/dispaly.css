@@ -22,6 +22,10 @@
     display: inline-block;
 }
 
+.d-table{
+    display: table;
+}
+
 .box-sizing-border {
     box-sizing: border-box;
 }
