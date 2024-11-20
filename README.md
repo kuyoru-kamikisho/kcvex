@@ -59,6 +59,11 @@
    <k-expand-transition>
      ...
    </k-expand-transition>
+   
+   <!-- 使用指令（不要忘记注册指令） -->
+   <k-sheet v-ripple width="100px" height="40px" class="elevation-4 d-flex align-ct justify-ct">
+     ...
+   </k-sheet>
    ```
 
 ## 组件
@@ -77,13 +82,11 @@
 
 #### KExpandTransition
 
-适用于任何 vue 版本 的`抽屉伸缩展开渐变动画组件`，提供默认插槽，
-与`KExpandTransition`具备完全相同的props
+适用于任何 vue 版本 的`抽屉伸缩展开渐变动画组件`，提供默认插槽
 
 #### KOverlay
 
 `遮罩` 组件，可快速设置一定的样式，支持跨Dom结构进行渲染，详情可以看该组件的 props，提供默认插槽
-与`KOverlay`拥有完全相同的props
 
 #### KSheet
 
