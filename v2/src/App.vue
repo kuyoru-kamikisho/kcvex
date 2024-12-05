@@ -45,7 +45,17 @@ const ovl = ref(false)
     </k-overlay>
     <k-sheet tag="ul" color="rgba(0,0,0,.2)" class="ripple-test-box">
       <k-sheet tag="li" class="py-2">指令测试(无)</k-sheet>
-      <k-sheet color="rgba(0,0,0,.4)" v-ripple tag="li" v-for="i in 100" :key="i" class="my-1 box-sizing-border py-2 px-5 position-relative c-pointer">指令测试</k-sheet>
+      <k-sheet height="400px" overflow="auto">
+        <k-sheet color="rgba(0,0,0,.4)"
+                 v-ripple
+                 v-scroll
+                 tag="li"
+                 v-for="i in 100"
+                 :key="i"
+                 class="my-1 box-sizing-border py-2 px-5 position-relative c-pointer">
+          指令测试 {{ i }}
+        </k-sheet>
+      </k-sheet>
     </k-sheet>
   </div>
 </template>
@@ -56,15 +66,16 @@ const ovl = ref(false)
   justify-content: space-between;
   margin: 40px 120px;
 }
-li{
+
+li {
   list-style: none;
 }
-.ripple-test-box{
-  height: 400px;
-  overflow: auto;
+
+.ripple-test-box {
   transform: translate(-100px) scale(.6);
   --ripple-opacity: .4;
 }
+
 button {
   padding: 8px 12px;
 }
