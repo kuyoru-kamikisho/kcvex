@@ -39,8 +39,14 @@ function scroller(dom, o, m1 = true) {
     if (!o.reverse) {
         // 正向动画
         return requestAnimationFrame(() => {
-            if (totalHeight > viewHeight && scrolledY < toEndHeight) {
-                dom.scrollTo(0, nextToY)
+            const b = o.direction === 'y'
+                ? totalHeight > viewHeight && scrolledY < toEndHeight
+                : totalWidth > viewWidth && scrolledX < totalWidth
+            if (b) {
+                if (o.direction === 'y')
+                    dom.scrollTo(0, nextToY)
+                else
+                    dom.scrollTo(nextToX, 0)
             } else {
                 // 周期结束
                 if (o.infinite) {
@@ -52,8 +58,14 @@ function scroller(dom, o, m1 = true) {
     } else {
         // 反向动画
         return requestAnimationFrame(() => {
-            if (totalHeight > viewHeight && scrolledY > 0) {
-                dom.scrollTo(0, nextToY)
+            const b = o.direction === 'y'
+                ? totalHeight > viewHeight && scrolledY > 0
+                : totalWidth > viewWidth && scrolledX > 0
+            if (b) {
+                if (o.direction === 'y')
+                    dom.scrollTo(0, nextToY)
+                else
+                    dom.scrollTo(nextToX, 0)
                 scroller(dom, o, false)
             } else {
                 // 周期结束

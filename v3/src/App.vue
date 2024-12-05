@@ -77,6 +77,16 @@ onMounted(() => {
         </k-sheet>
       </k-sheet>
     </k-sheet>
+    <k-sheet v-scroll="{direction:'x'}" overflow="auto" class="d-flex flex-nowrap">
+      <k-sheet v-for="i in list" :key="i.id" class="py-2 px-5 mx-1 text-16 d-inline-block">
+        {{ i.key }} 横向
+      </k-sheet>
+    </k-sheet>
+    <k-sheet v-scroll="{direction:'x',reverse:true}" overflow="auto" class="d-flex flex-nowrap">
+      <k-sheet v-for="i in list" :key="i.id" class="py-2 px-5 mx-1 text-16 d-inline-block">
+        {{ i.key }} x反向
+      </k-sheet>
+    </k-sheet>
     <k-sheet color="blue" height="14px" class="mb-12"></k-sheet>
   </div>
 </template>
