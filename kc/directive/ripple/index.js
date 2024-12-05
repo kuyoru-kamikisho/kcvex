@@ -22,9 +22,7 @@ function updateRipple(el, binding, b) {
         el.style.overflow = el_overflow
     }
     const dfn = e => {
-        let len = Math.round(
-                Math.sqrt(Math.pow(el.offsetWidth, 2) + Math.pow(el.offsetHeight, 2))
-            ),
+        let len = Math.round(Math.sqrt(Math.pow(el.clientWidth, 2) + Math.pow(el.clientHeight, 2))),
             mr = Math.round(len / 10);
         resE()
         clearTimeout(removeing)

@@ -1,14 +1,31 @@
 <script setup lang="ts">
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 import '../../kc/style.js'
 import VExpandTransition from "../../kc/v3/KExpandTransition.vue";
 import KOverlay from "../../kc/v3/KOverlay.vue";
 import KBtn from '../../kc/v3/KBtn.vue'
 import KSheet from '../../kc/v3/KSheet.vue'
 import KDivider from '../../kc/v3/KDivider.vue'
+import {genHash} from "@/utils";
 
+let mark1 = 0
 const xss = ref([true, true])
 const ovl = ref(false)
+const list = ref([])
+
+onMounted(() => {
+  mark1 = setInterval(() => {
+    const len = list.value.length;
+    if (len >= 30) {
+      clearInterval(mark1)
+      return
+    }
+    list.value.push({
+      key: 'kcvex测试单元' + len,
+      id: genHash(7)
+    })
+  }, 33)
+})
 </script>
 
 <template>
@@ -30,13 +47,37 @@ const ovl = ref(false)
       </div>
       <div class="test-unit unit2">
         <v-expand-transition>
-          <div v-if="xss[1]" class="box2 u-box">
-            Y收缩
-          </div>
+          <k-sheet tag="ul" max-height="100%" overflow="auto" v-scroll v-if="xss[1]" class="box2 u-box inselectable">
+            <k-sheet tag="li" v-for="i in list" :key="i.id" class="py-2 px-5 text-16">
+              {{ i.key }}
+            </k-sheet>
+          </k-sheet>
         </v-expand-transition>
       </div>
     </div>
-    <k-sheet color="blue" height="14px"></k-sheet>
+    <k-sheet height="320px" color="#d8cde187" class="d-flex">
+      <k-sheet max-height="100%" overflow="auto" v-scroll="{factor:0.1}" color="#dbdbe0" class="flex-grow-1">
+        <k-sheet tag="li" v-for="i in list" :key="i.id" class="py-2 px-5 text-16">
+              {{ i.key }}较慢
+            </k-sheet>
+      </k-sheet>
+      <k-sheet max-height="100%" overflow="auto" v-scroll color="#dbe0df" class="flex-grow-1">
+        <k-sheet tag="li" v-for="i in list" :key="i.id" class="py-2 px-5 text-16">
+              {{ i.key }}
+            </k-sheet>
+      </k-sheet>
+      <k-sheet max-height="100%" overflow="auto" v-scroll color="#e9d7e4" class="flex-grow-1">
+        <k-sheet tag="li" v-for="i in list" :key="i.id" class="py-2 px-5 text-16">
+              {{ i.key }}
+            </k-sheet>
+      </k-sheet>
+      <k-sheet max-height="100%" overflow="auto" v-scroll color="#e9dfd7" class="flex-grow-1">
+        <k-sheet tag="li" v-for="i in list" :key="i.id" class="py-2 px-5 text-16">
+              {{ i.key }}
+            </k-sheet>
+      </k-sheet>
+    </k-sheet>
+    <k-sheet color="blue" height="14px" class="mb-12"></k-sheet>
   </div>
 </template>
 
@@ -64,9 +105,6 @@ const ovl = ref(false)
 .u-box {
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: rgba(0, 0, 0, 0.46);
 }
 </style>
