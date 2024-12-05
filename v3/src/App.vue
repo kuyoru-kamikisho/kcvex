@@ -58,23 +58,23 @@ onMounted(() => {
     <k-sheet height="320px" color="#d8cde187" class="d-flex">
       <k-sheet max-height="100%" overflow="auto" v-scroll="{factor:3}" color="#dbdbe0" class="flex-grow-1">
         <k-sheet tag="li" v-for="i in list" :key="i.id" class="py-2 px-5 text-16">
-              {{ i.key }}较快
-            </k-sheet>
+          {{ i.key }}较快
+        </k-sheet>
       </k-sheet>
-      <k-sheet max-height="100%" overflow="auto" v-scroll color="#dbe0df" class="flex-grow-1">
+      <k-sheet max-height="100%" overflow="auto" v-scroll="{reverse:true}" color="#dbe0df" class="flex-grow-1">
         <k-sheet tag="li" v-for="i in list" :key="i.id" class="py-2 px-5 text-16">
-              {{ i.key }}
-            </k-sheet>
+          {{ i.key }}反向
+        </k-sheet>
       </k-sheet>
       <k-sheet max-height="100%" overflow="auto" v-scroll color="#e9d7e4" class="flex-grow-1">
         <k-sheet tag="li" v-for="i in list" :key="i.id" class="py-2 px-5 text-16">
-              {{ i.key }}
-            </k-sheet>
+          {{ i.key }}
+        </k-sheet>
       </k-sheet>
       <k-sheet max-height="100%" overflow="auto" v-scroll color="#e9dfd7" class="flex-grow-1">
         <k-sheet tag="li" v-for="i in list" :key="i.id" class="py-2 px-5 text-16">
-              {{ i.key }}
-            </k-sheet>
+          {{ i.key }}
+        </k-sheet>
       </k-sheet>
     </k-sheet>
     <k-sheet color="blue" height="14px" class="mb-12"></k-sheet>
