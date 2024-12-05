@@ -56,9 +56,9 @@ onMounted(() => {
       </div>
     </div>
     <k-sheet height="320px" color="#d8cde187" class="d-flex">
-      <k-sheet max-height="100%" overflow="auto" v-scroll="{factor:0.1}" color="#dbdbe0" class="flex-grow-1">
+      <k-sheet max-height="100%" overflow="auto" v-scroll="{factor:3}" color="#dbdbe0" class="flex-grow-1">
         <k-sheet tag="li" v-for="i in list" :key="i.id" class="py-2 px-5 text-16">
-              {{ i.key }}较慢
+              {{ i.key }}较快
             </k-sheet>
       </k-sheet>
       <k-sheet max-height="100%" overflow="auto" v-scroll color="#dbe0df" class="flex-grow-1">
