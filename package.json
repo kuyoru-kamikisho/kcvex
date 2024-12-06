@@ -1,7 +1,7 @@
 {
   "name": "kcvex",
   "version": "1.7.0",
-  "description": "适用于vue2和vue3的抽屉动画等组件，帮助您快速搭建基础布局",
+  "description": "以 精小而快速 的理念设计的高效率布局UI库，同时适用于vue2和vue3！",
   "private": false,
   "type": "module",
   "author": {
