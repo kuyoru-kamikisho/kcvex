@@ -55,7 +55,11 @@ function pse1() {
     </k-overlay>
     <k-sheet tag="ul" color="rgba(0,0,0,.2)" class="ripple-test-box">
       <k-sheet tag="li" class="py-2">指令测试(无)</k-sheet>
-      <k-sheet @mouseenter.native="pse1" @mouseleave.native="pse0" v-scroll="{pause:pse,factor:0.8}" height="400px" overflow="auto">
+      <k-sheet @mouseenter.native="pse1"
+               @mouseleave.native="pse0"
+               v-scroll="{pause:pse,factor:1}"
+               height="400px"
+               overflow="auto">
         <k-sheet color="rgba(0,0,0,.4)"
                  v-ripple
                  tag="li"
