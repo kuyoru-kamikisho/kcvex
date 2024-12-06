@@ -1,22 +1,30 @@
 /**
  * @param {HTMLElement|Element} dom 目标元素
+ * @param {boolean} [dom.__scroll_isfirst] 递归函数逻辑状态标识符-判断是否第一次执行
+ * @param {object} [dom.__scroll_binding_value] 实例指令值
+ * @param {number} [dom.__scroll_requestanime] 实例指令值
+ *
  * @param {object} o 指令值
- * @param {boolean} [o.pause=false] 是否暂停，注意不等同于禁用
+ * @param {boolean} [o.destroy=false] 销毁帧动画，一旦置为true，该该指令本身会立刻终止运行，不可通过设置为true重新运行，如果想重新运行，请更改元素的 key 属性值
  * @param {'x'|'y'} [o.direction='y'] 滚动方向
  * @param {number} [o.factor=1] 帧距离因子，代表每一帧移动的像素距离，该值越大，滚动速度越快，越小则越慢，注意该值的最大值和最小值受设备像素影响，过小时将会失效，推荐不小于0.8
  * @param {boolean} [o.infinite=true] 是否无限播放
+ * @param {boolean} [o.pause=false] 是否暂停，注意不等同于禁用，只是外观上暂停，指令本身每一帧都依然在执行
  * @param {boolean} [o.reverse=false] 反转滚动方向
- * @param {'mouseenter'|'click'|string} [o.stopwhen='mouseenter'] 当点击或悬浮时暂停播放动画，可以设置任意能被监听到的Event事件名称
- * @param {boolean} [m1=true] 递归函数逻辑状态标识符-判断是否第一次执行
+ *
  * @return {number}
  */
-function scroller(dom, o, m1 = true) {
+function scroller(dom, o) {
+    if (o.destroy) {
+        cancelAnimationFrame(dom.__scroll_requestanime)
+        return 0
+    }
+    if (dom.__scroll_binding_value !== undefined) o = dom.__scroll_binding_value
     if (o.pause === undefined) o.pause = false
     if (o.infinite === undefined) o.infinite = true
     if (o.direction === undefined) o.direction = 'y'
     if (o.factor === undefined) o.factor = 1
     if (o.reverse === undefined) o.reverse = false
-    if (o.stopwhen === undefined) o.stopwhen = 'mouseenter'
 
     let totalWidth = dom.scrollWidth,
         totalHeight = dom.scrollHeight,
@@ -27,7 +35,7 @@ function scroller(dom, o, m1 = true) {
         scrolledX = dom.scrollLeft,
         scrolledY = dom.scrollTop
 
-    if (o.reverse && m1) {
+    if (o.reverse && dom.__scroll_isfirst) {
         scrolledX = toEndWidth
         scrolledY = toEndHeight
     }
@@ -36,25 +44,24 @@ function scroller(dom, o, m1 = true) {
         nextToX = o.reverse ? scrolledX - factor : scrolledX + factor,
         nextToY = o.reverse ? scrolledY - factor : scrolledY + factor
 
-    return requestAnimationFrame(() => {
+    dom.__scroll_requestanime = requestAnimationFrame(() => {
         if (!o.reverse) {
             // 正向动画
             const b = o.direction === 'y'
                 ? totalHeight > viewHeight && scrolledY < toEndHeight
-                : totalWidth > viewWidth && scrolledX < totalWidth
-            if (b) {
-                if (!o.pause) {
-                    if (o.direction === 'y')
-                        dom.scrollTo(0, nextToY)
-                    else
-                        dom.scrollTo(nextToX, 0)
-                }
+                : totalWidth > viewWidth && scrolledX < toEndWidth
+            if (b && !o.pause) {
+                if (o.direction === 'y')
+                    dom.scrollTo(0, nextToY)
+                else
+                    dom.scrollTo(nextToX, 0)
             } else {
                 // 周期结束
-                if (o.infinite) {
+                if (o.infinite && !o.pause) {
                     dom.scrollTo(0, 0)
                 }
             }
+            dom.__scroll_isfirst = false
             scroller(dom, o)
         } else {
             // 反向动画
@@ -68,50 +75,46 @@ function scroller(dom, o, m1 = true) {
                     else
                         dom.scrollTo(nextToX, 0)
                 }
-                scroller(dom, o, false)
+                dom.__scroll_isfirst = false
+                scroller(dom, o)
             } else {
                 // 周期结束
                 if (o.infinite) {
-                    dom.scrollTo(0, 0)
-                    scroller(dom, o, true)
+                    if (!o.pause)
+                        dom.scrollTo(0, 0)
+                    dom.__scroll_isfirst = true
+                    scroller(dom, o)
                 }
             }
         }
     })
 }
 
-function created(el, binding, vnode) {
-}
-
 function mounted(el, binding, vnode) {
     const bvau = binding.value ?? {}
-    let animeId = scroller(el, bvau)
+    el.__scroll_isfirst = true
+    scroller(el, bvau)
     const resizeObserver = new ResizeObserver(entries => {
         for (let entry of entries) {
-            cancelAnimationFrame(animeId)
-            animeId = scroller(el, bvau)
+            cancelAnimationFrame(el.__scroll_requestanime)
+            el.__scroll_isfirst = true
+            scroller(el, bvau)
         }
     })
 
     resizeObserver.observe(el)
 }
 
-function beforeUpdate(el, binding, vnode, prevVnode) {
-}
-
 function updated(el, binding, vnode, prevVnode) {
-    // scroller(el)
+    el.__scroll_binding_value = binding.value
 }
 
 function beforeUnmount(el, binding, vnode) {
-}
-
-function unmounted(el, binding, vnode) {
-
+    cancelAnimationFrame(el.__scroll_requestanime)
 }
 
 export default {
     mounted,
     updated,
-    unmounted
+    beforeUnmount
 }

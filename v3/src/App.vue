@@ -16,12 +16,10 @@ const list = ref([])
 
 function scrollEn() {
   pse.value = true
-  console.log('en')
 }
 
 function scrollOt() {
   pse.value = false
-  console.log('ot')
 }
 
 onMounted(() => {
