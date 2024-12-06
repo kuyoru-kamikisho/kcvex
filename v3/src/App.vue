@@ -81,9 +81,9 @@ onMounted(() => {
           {{ i.key }}移动暂停+无限+请悬浮
         </k-sheet>
       </k-sheet>
-      <k-sheet max-height="100%" overflow="auto" v-scroll color="#e9dfd7" class="flex-grow-1">
+      <k-sheet max-height="100%" overflow="auto" v-scroll="{factor:0.2}" color="#e9dfd7" class="flex-grow-1">
         <k-sheet tag="li" v-for="i in list" :key="i.id" class="py-2 px-5 text-16">
-          {{ i.key }}
+          {{ i.key }} 超慢
         </k-sheet>
       </k-sheet>
     </k-sheet>

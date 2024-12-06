@@ -57,7 +57,7 @@ function pse1() {
       <k-sheet tag="li" class="py-2">指令测试(无)</k-sheet>
       <k-sheet @mouseenter.native="pse1"
                @mouseleave.native="pse0"
-               v-scroll="{pause:pse,factor:1}"
+               v-scroll="{pause:pse,factor:0.3}"
                height="400px"
                overflow="auto">
         <k-sheet color="rgba(0,0,0,.4)"

@@ -2,9 +2,10 @@
  * @param {HTMLElement|Element} dom 目标元素
  * @param {boolean} [dom.__scroll_isfirst] 递归函数逻辑状态标识符-判断是否第一次执行
  * @param {object} [dom.__scroll_binding_value] 实例指令值
- * @param {number} [dom.__scroll_requestanime] 实例指令值
  * @param {number} [dom.__scroll_prevx] 上一帧的目标距离x
  * @param {number} [dom.__scroll_prevy] 上一帧的目标距离y
+ * @param {boolean} [dom.__scroll_reset] 是否应该重新读取偏移
+ * @param {number} [dom.__scroll_requestanime] 实例帧动画标记
  *
  * @param {object} o 指令值
  * @param {boolean} [o.destroy=false] 销毁帧动画，一旦置为true，该该指令本身会立刻终止运行，不可通过设置为true重新运行，如果想重新运行，请更改元素的 key 属性值
@@ -35,17 +36,22 @@ function scroller(dom, o) {
         toEndWidth = totalWidth - viewWidth,
         toEndHeight = totalHeight - viewHeight
 
-    dom.__scroll_prevx = dom.scrollLeft
-    dom.__scroll_prevy = dom.scrollTop
-
-    if (o.reverse && dom.__scroll_isfirst) {
-        dom.__scroll_prevx = toEndWidth
-        dom.__scroll_prevy = toEndHeight
+    if (dom.__scroll_reset) {
+        dom.__scroll_prevx = dom.scrollLeft
+        dom.__scroll_prevy = dom.scrollTop
+        if (o.reverse && dom.__scroll_isfirst) {
+            dom.__scroll_prevx = toEndWidth
+            dom.__scroll_prevy = toEndHeight
+        }
+        dom.__scroll_reset = false
     }
 
     let factor = o.factor,
         nextToX = o.reverse ? dom.__scroll_prevx - factor : dom.__scroll_prevx + factor,
         nextToY = o.reverse ? dom.__scroll_prevy - factor : dom.__scroll_prevy + factor
+
+    dom.__scroll_prevx = nextToX
+    dom.__scroll_prevy = nextToY
 
     dom.__scroll_requestanime = requestAnimationFrame(() => {
         if (!o.reverse) {
@@ -62,6 +68,7 @@ function scroller(dom, o) {
                 // 周期结束
                 if (o.infinite && !o.pause) {
                     dom.scrollTo(0, 0)
+                    dom.__scroll_reset = true
                 }
             }
             dom.__scroll_isfirst = false
@@ -86,6 +93,7 @@ function scroller(dom, o) {
                     if (!o.pause)
                         dom.scrollTo(0, 0)
                     dom.__scroll_isfirst = true
+                    dom.__scroll_reset = true
                     scroller(dom, o)
                 }
             }
@@ -94,14 +102,15 @@ function scroller(dom, o) {
 }
 
 function mounted(el, binding, vnode) {
-    console.log(1)
     const bvau = binding.value ?? {}
     el.__scroll_isfirst = true
+    el.__scroll_reset = true
     scroller(el, bvau)
     const resizeObserver = new ResizeObserver(entries => {
         for (let entry of entries) {
             cancelAnimationFrame(el.__scroll_requestanime)
             el.__scroll_isfirst = true
+            el.__scroll_reset = true
             scroller(el, bvau)
         }
     })
@@ -111,6 +120,7 @@ function mounted(el, binding, vnode) {
 
 function updated(el, binding, vnode, prevVnode) {
     el.__scroll_binding_value = binding.value
+    el.__scroll_reset = true
 }
 
 function beforeUnmount(el, binding, vnode) {
