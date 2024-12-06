@@ -14,6 +14,16 @@ import {ref} from "vue";
 const fox = ref(true)
 const foy = ref(true)
 const ovl = ref(false)
+const pse = ref(false)
+
+function pse0() {
+  pse.value = false
+}
+
+function pse1() {
+  pse.value = true
+}
+
 </script>
 
 <template>
@@ -45,10 +55,9 @@ const ovl = ref(false)
     </k-overlay>
     <k-sheet tag="ul" color="rgba(0,0,0,.2)" class="ripple-test-box">
       <k-sheet tag="li" class="py-2">指令测试(无)</k-sheet>
-      <k-sheet height="400px" overflow="auto">
+      <k-sheet @mouseenter.native="pse1" @mouseleave.native="pse0" v-scroll="{pause:pse,factor:0.8}" height="400px" overflow="auto">
         <k-sheet color="rgba(0,0,0,.4)"
                  v-ripple
-                 v-scroll
                  tag="li"
                  v-for="i in 100"
                  :key="i"

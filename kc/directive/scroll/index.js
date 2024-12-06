@@ -91,6 +91,7 @@ function scroller(dom, o) {
 }
 
 function mounted(el, binding, vnode) {
+    console.log(1)
     const bvau = binding.value ?? {}
     el.__scroll_isfirst = true
     scroller(el, bvau)
@@ -114,7 +115,10 @@ function beforeUnmount(el, binding, vnode) {
 }
 
 export default {
-    mounted,
-    updated,
-    beforeUnmount
+    bind: mounted,
+    update: updated,
+    unbind: beforeUnmount,
+    mounted: mounted,
+    updated: updated,
+    beforeUnmount: beforeUnmount
 }
