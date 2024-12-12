@@ -5,20 +5,22 @@
 ```
 
 <!-- TOC -->
-  * [简介](#简介)
-  * [更新日志](#更新日志)
-  * [基础使用](#基础使用)
-  * [组件](#组件)
+
+* [简介](#简介)
+* [更新日志](#更新日志)
+* [基础使用](#基础使用)
+* [组件](#组件)
     * [Components](#components)
-      * [KBtn](#kbtn)
-      * [KDivider](#kdivider)
-      * [KExpandTransition](#kexpandtransition)
-      * [KOverlay](#koverlay)
-      * [KSheet](#ksheet)
+        * [KBtn](#kbtn)
+        * [KDivider](#kdivider)
+        * [KExpandTransition](#kexpandtransition)
+        * [KOverlay](#koverlay)
+        * [KSheet](#ksheet)
     * [指令](#指令)
-      * [Ripple](#ripple)
-      * [Scroll](#scroll)
+        * [Ripple](#ripple)
+        * [Scroll](#scroll)
     * [关于样式表切片](#关于样式表切片)
+
 <!-- TOC -->
 
 ## 简介
@@ -66,8 +68,9 @@
    ```
 2. 在项目中使用
    ```javascript
-   // 按需要导入样式表，也许只有在组件的样式出现问题时您可能才需要导入，推荐导入
+   // 样式表导入是可选的
    import 'kcvex/style'
+   
    // vue2组件:
    import { KExpandTransition } from 'kcvex/v2'
    
@@ -77,14 +80,18 @@
    // 导入指令:
    import { Ripple } from 'kcvex/directive'
    ```
-   ```javascript
-   // 选项式组件
+   ```textmate
+   // 在选项式组件需要注册
    ...
-   component:{ KExpandTransition }
+   export default {
+    directives: {Ripple},
+    components: {KExpandTransition},
+   }
    ...
    ```
 2. 在模板中使用
    ```html
+   <!--  使用组件 -->
    <k-expand-transition>
      ...
    </k-expand-transition>
@@ -127,6 +134,21 @@
 
 #### Ripple
 
+```vue
+
+<template>
+  <k-btn v-ripple style="--ripple-color:red;"></k-btn>
+</template>
+<script>
+  import {KBtn} from 'kcvex/v2'
+  import {Ripple} from 'kcvex/directive'
+
+  export default {
+    directives: {Ripple},
+    components: {KBtn},
+  }
+</script>
+```
 
 基于 material design 设计规范衍生的元素点击波纹效果，
 使用该指令可以快速地为指定元素创建点击波纹效果，
@@ -140,6 +162,24 @@
 
 #### Scroll
 
+```vue
+
+<template>
+  <k-sheet height="300px" overflow="auto" v-scroll="{factor:.3}">
+    <k-sheet height="1000px" color="grey"></k-sheet>
+  </k-sheet>
+</template>
+<script>
+  import {KSheet} from 'kcvex/v2'
+  import {Scroll} from 'kcvex/directive'
+
+  export default {
+    directives: {Scroll},
+    components: {KSheet}
+  }
+</script>
+```
+
 在一些项目中可能会有类似跑马灯一样让列表不断滚动的效果，
 该指令的作用就是让可以滚动的元素实现自动滚动效果。
 
@@ -151,13 +191,14 @@
 下面是该指令接收的对象以及参数说明，它完全可以是响应式的！
 
 ```textmate
-@param {object} o 指令值
-@param {boolean} [o.destroy=false] 销毁帧动画，一旦置为true，该该指令本身会立刻终止运行，不可通过设置为true重新运行，如果想重新运行，请更改元素的 key 属性值
-@param {'x'|'y'} [o.direction='y'] 滚动方向
-@param {number} [o.factor=1] 帧距离因子，代表每一帧移动的像素距离，该值越大，滚动速度越快，越小则越慢，注意该值的最大值和最小值受设备像素影响，过小时将会失效
-@param {boolean} [o.infinite=true] 是否无限播放
-@param {boolean} [o.pause=false] 是否暂停，注意不等同于禁用，只是外观上暂停，指令本身每一帧都依然在执行
-@param {boolean} [o.reverse=false] 反转滚动方向
+    @param {object} o 指令值
+    @param {boolean} [o.destroy=false] 销毁帧动画，一旦置为true，该该指令本身会立刻终止运行，不可通过设置为true重新运行，如果想重新运行，请更改元素的 key 属性值
+    @param {'x'|'y'} [o.direction='y'] 滚动方向
+    @param {number} [o.factor=1] 帧距离因子，代表每一帧移动的像素距离，该值越大，滚动速度越快，越小则越慢，注意该值的最大值和最小值受设备像素影响，过小时将会失效
+    @param {boolean} [o.infinite=true] 是否无限播放
+    @param {boolean} [o.pause=false] 是否暂停，注意不等同于禁用，只是外观上暂停，指令本身每一帧都依然在执行
+    @param {number} [o.redundancy=300] 冗余高度。只有当 “内容物总高度>(容器盒子高度+冗余高度)” 时才会发生滚动
+    @param {boolean} [o.reverse=false] 反转滚动方向
 ```
 
 ### 关于样式表切片
@@ -169,7 +210,11 @@ import 'kcvex/style'
 kcvex 提供大量易于记忆的常用样式切片，详情可以看该组件的 [style列表](./kc/style.js)，
 一些布局组件也用到了这里面的样式类，比如 `KBtn` 的默认阴影效果。
 
-如果您不导入这些切片，则您不可以直接使用这些切片，`个别`组件的样式可能会受此影响。
+如果您不导入这些切片，则您不可以直接使用这些切片，`极个别`组件的样式可能会受此影响。
+
+如果您使用了其他较为成熟的css组件库，比如 [Tailwind CSS](https://tailwindcss.com/)，
+则完全没有必要导入本库的样式表切片，因为相对Tailwind CSS而言本组件库的样式表是静态的，
+凡是被kcvex导入的样式表无论您是否使用都会被打包进最终产物。
 
 当然，为了最终的包大小考虑，您已可以只导入其中的部分样式表，就像下面这样：
 

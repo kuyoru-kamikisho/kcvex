@@ -13,6 +13,7 @@
  * @param {number} [o.factor=1] 帧距离因子，代表每一帧移动的像素距离，该值越大，滚动速度越快，越小则越慢，注意该值的最大值和最小值受设备像素影响，过小时将会失效
  * @param {boolean} [o.infinite=true] 是否无限播放
  * @param {boolean} [o.pause=false] 是否暂停，注意不等同于禁用，只是外观上暂停，指令本身每一帧都依然在执行
+ * @param {number} [o.redundancy=300] 冗余高度。只有当 “内容物总高度>(容器盒子高度+冗余高度)” 时才会发生滚动
  * @param {boolean} [o.reverse=false] 反转滚动方向
  *
  * @return {number}
@@ -28,11 +29,14 @@ function scroller(dom, o) {
     if (o.direction === undefined) o.direction = 'y'
     if (o.factor === undefined) o.factor = 1
     if (o.reverse === undefined) o.reverse = false
+    if (o.redundancy === undefined) o.redundancy = 300
 
     let totalWidth = dom.scrollWidth,
         totalHeight = dom.scrollHeight,
         viewWidth = dom.clientWidth,
         viewHeight = dom.clientHeight,
+        safeWidth = viewWidth + o.redundancy,
+        safeHeight = viewHeight + o.redundancy,
         toEndWidth = totalWidth - viewWidth,
         toEndHeight = totalHeight - viewHeight
 
@@ -57,8 +61,8 @@ function scroller(dom, o) {
         if (!o.reverse) {
             // 正向动画
             const b = o.direction === 'y'
-                ? totalHeight > viewHeight && dom.__scroll_prevy < toEndHeight
-                : totalWidth > viewWidth && dom.__scroll_prevx < toEndWidth
+                ? totalHeight > safeHeight && dom.__scroll_prevy < toEndHeight
+                : totalWidth > safeWidth && dom.__scroll_prevx < toEndWidth
             if (b && !o.pause) {
                 if (o.direction === 'y')
                     dom.scrollTo(0, nextToY)
@@ -76,8 +80,8 @@ function scroller(dom, o) {
         } else {
             // 反向动画
             const b = o.direction === 'y'
-                ? totalHeight > viewHeight && dom.__scroll_prevy > 0
-                : totalWidth > viewWidth && dom.__scroll_prevx > 0
+                ? totalHeight > safeHeight && dom.__scroll_prevy > 0
+                : totalWidth > safeWidth && dom.__scroll_prevx > 0
             if (b) {
                 if (!o.pause) {
                     if (o.direction === 'y')
