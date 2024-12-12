@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import 'kcvex/style'
-import {K2Sheet} from 'kcvex/v2'
+import {KSheet} from 'kcvex/v2'
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 </script>
@@ -8,13 +8,13 @@ import TheWelcome from './components/TheWelcome.vue'
 <template>
   <div id="app">
     <header>
-      <k2-sheet color="blue" width="100px" height="40px" class="pa-10">测试</k2-sheet>
+      <k-sheet color="blue" width="100px" height="40px" class="pa-10">测试</k-sheet>
       <div class="wrapper">
-        <HelloWorld msg="You did it!" />
+        <HelloWorld msg="You did it!"/>
       </div>
     </header>
     <main>
-      <TheWelcome />
+      <TheWelcome/>
     </main>
   </div>
 </template>
