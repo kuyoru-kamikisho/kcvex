@@ -20,6 +20,7 @@
         * [Ripple](#ripple)
         * [Scroll](#scroll)
     * [关于样式表切片](#关于样式表切片)
+* [内置的过渡动画](#内置的过渡动画)
 
 <!-- TOC -->
 
@@ -221,3 +222,19 @@ kcvex 提供大量易于记忆的常用样式切片，详情可以看该组件�
 ```css
 @import "kcvex/kc/style/flex.css";
 ```
+
+## 内置的过渡动画
+
+如果您使用的UI库和以下样式有冲突，可以考虑按需引入style。
+
+| name             | use in                                    |
+|------------------|-------------------------------------------|
+| kfade            | fade transition                           |
+| scroll-x         | scroll transition in horizontal direction |
+| scroll-y         | scroll transition in vertical direction   |
+| scroll-x-reverse | scroll transition in horizontal direction |
+| scroll-y-reverse | scroll transition in vertical direction   |
+| slide-x          | slide transition in horizontal direction  |
+| slide-y          | slide transition in vertical direction    |
+| slide-x-reverse  | slide transition in horizontal direction  |
+| slide-y-reverse  | slide transition in vertical direction    |

@@ -1,0 +1,54 @@
+.scroll-x-enter-active,
+.scroll-x-leave-active,
+.scroll-y-enter-active,
+.scroll-y-leave-active,
+.scroll-x-reverse-enter-active,
+.scroll-x-reverse-leave-active,
+.scroll-y-reverse-enter-active,
+.scroll-y-reverse-leave-active {
+    transition: all 207ms ease-in-out;
+}
+
+.scroll-x-enter-from,
+.scroll-x-enter {
+    opacity: 0;
+    transform: translateX(-120%);
+}
+
+.scroll-x-leave-to {
+    opacity: 0;
+    transform: translateX(120%);
+}
+
+.scroll-y-enter-from,
+.scroll-y-enter {
+    opacity: 0;
+    transform: translateY(-120%);
+}
+
+.scroll-y-leave-to {
+    opacity: 0;
+    transform: translateY(120%);
+}
+
+.scroll-x-reverse-enter-from,
+.scroll-x-reverse-enter {
+    opacity: 0;
+    transform: translateX(120%);
+}
+
+.scroll-x-reverse-leave-to {
+    opacity: 0;
+    transform: translateX(-120%);
+}
+
+.scroll-y-reverse-enter-from,
+.scroll-y-reverse-enter {
+    opacity: 0;
+    transform: translateY(120%);
+}
+
+.scroll-y-reverse-leave-to {
+    opacity: 0;
+    transform: translateY(-120%);
+}

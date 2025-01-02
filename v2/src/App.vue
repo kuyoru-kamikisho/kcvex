@@ -15,6 +15,7 @@ const fox = ref(true)
 const foy = ref(true)
 const ovl = ref(false)
 const pse = ref(false)
+const scr = ref(true)
 
 function pse0() {
   pse.value = false
@@ -27,7 +28,7 @@ function pse1() {
 </script>
 
 <template>
-  <div class="box inselectable">
+  <div class="box inselectable flex-wrap">
     <k-divider width="200px" class="position-absolute"></k-divider>
     <div>
       <button @click="fox=!fox">x方向</button>
@@ -70,6 +71,19 @@ function pse1() {
         </k-sheet>
       </k-sheet>
     </k-sheet>
+    <k-divider width="100%" height="2px"></k-divider>
+    <div class="d-flex">
+      <k-btn @click.native="scr=!scr" class="mr-10">切换模式</k-btn>
+      <transition name="scroll-x-reverse" mode="out-in">
+        <k-sheet v-if="scr" width="40px" height="40px" color="blue" key="1"></k-sheet>
+        <k-sheet v-else width="40px" height="40px" color="red" key="2"></k-sheet>
+      </transition>
+      <k-sheet width="40px"></k-sheet>
+      <transition name="scroll-y-reverse" mode="out-in">
+        <k-sheet v-if="scr" width="40px" height="40px" color="blue" key="1"></k-sheet>
+        <k-sheet v-else width="40px" height="40px" color="red" key="2"></k-sheet>
+      </transition>
+    </div>
   </div>
 </template>
 

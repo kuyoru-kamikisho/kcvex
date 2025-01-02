@@ -13,6 +13,7 @@ const xss = ref([true, true])
 const ovl = ref(false)
 const pse = ref(false)
 const list = ref([])
+const scr = ref(true)
 
 function scrollEn() {
   pse.value = true
@@ -56,7 +57,7 @@ onMounted(() => {
       </div>
       <div class="test-unit unit2">
         <v-expand-transition>
-          <k-sheet tag="ul" max-height="100%" overflow="auto" v-scroll v-if="xss[1]" class="box2 u-box inselectable">
+          <k-sheet tag="ul" max-height="200px" overflow="auto" v-scroll v-if="xss[1]" class="box2 u-box inselectable">
             <k-sheet tag="li" v-for="i in list" :key="i.id" class="py-2 px-5 text-16">
               {{ i.key }}
             </k-sheet>
@@ -99,15 +100,26 @@ onMounted(() => {
       </k-sheet>
     </k-sheet>
     <k-sheet color="blue" height="14px" class="mb-12"></k-sheet>
+    <div class="d-flex">
+      <k-btn @click.native="scr=!scr" class="mr-10">切换模式</k-btn>
+      <transition name="slide-x-reverse" mode="out-in">
+        <k-sheet v-if="scr" width="40px" height="40px" color="blue" key="1"></k-sheet>
+        <k-sheet v-else width="40px" height="40px" color="red" key="2"></k-sheet>
+      </transition>
+      <k-sheet width="40px"></k-sheet>
+      <transition name="slide-y-reverse" mode="out-in">
+        <k-sheet v-if="scr" width="40px" height="40px" color="blue" key="1"></k-sheet>
+        <k-sheet v-else width="40px" height="40px" color="red" key="2"></k-sheet>
+      </transition>
+    </div>
   </div>
 </template>
 
 <style>
 .container {
-  width: 50vw;
-  height: 50vh;
-  margin: 15vh auto;
+  overflow: auto;
   background-color: rgba(0, 0, 0, 0.15);
+  padding-bottom: 100px;
 }
 
 .test-box {
