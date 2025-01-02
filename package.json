@@ -25,7 +25,6 @@
   "files": [
     "./kc",
     "./json",
-    "./index.js",
     "./README.md",
     "./LICENSE"
   ],
