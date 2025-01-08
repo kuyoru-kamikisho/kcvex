@@ -2602,10 +2602,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kcvex@npm:^1.7.3":
-  version: 1.7.3
-  resolution: "kcvex@npm:1.7.3"
-  checksum: 10c0/020a933ba9bc22759c37c7222300ea8b1b2ee3c51c01a853cfde8de49102e1c2ed39449403924a629455f3e21652a6a7da8034aefba4b461b5a56c40dcd319b2
+"kcvex@npm:^1.7.31":
+  version: 1.7.31
+  resolution: "kcvex@npm:1.7.31"
+  checksum: 10c0/a07a1aeb67fd9de92b54e93cebe9422c8fd258c3e2ae1ee6aa4f83711b8807bf279898f13ba9e0b5cb405d113bcf52e59de79d601af522063cc1e7f953d2fa2e
   languageName: node
   linkType: hard
 
@@ -3326,7 +3326,7 @@ __metadata:
     "@vitejs/plugin-vue2": "npm:~2.3.1"
     "@vitejs/plugin-vue2-jsx": "npm:~1.1.1"
     "@vue/tsconfig": "npm:~0.5.1"
-    kcvex: "npm:^1.7.3"
+    kcvex: "npm:^1.7.31"
     terser: "npm:^5.14.2"
     typescript: "npm:~4.7.4"
     vite: "npm:~5.4.10"

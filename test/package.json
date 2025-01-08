@@ -8,7 +8,7 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "kcvex": "^1.7.3",
+    "kcvex": "^1.7.31",
     "vue": "^2.7.7"
   },
   "devDependencies": {
