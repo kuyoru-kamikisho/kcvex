@@ -51,6 +51,9 @@
 
 ## 基础使用
 
+        💣请注意，本库的默认导入是面向vue3的库
+        这意味着 import {KSheet} from 'kcvex' 与 import {KSheet} from 'kcvex/v3' 的行为是一致的
+
         💣本组件库不可被较低版本的模块打包器解析，
         因为本库依赖与package.json的exports路径映射，
         因此在使用之前应该先了解一下您的模块打包器（比如Webpack）的版本是否支持exports路径映射

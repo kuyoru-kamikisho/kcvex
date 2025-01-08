@@ -1,6 +1,6 @@
 {
   "name": "kcvex",
-  "version": "1.7.3",
+  "version": "1.7.31",
   "description": "以 精小而快速 的理念设计的高效率布局UI库，同时适用于vue2和vue3！",
   "private": false,
   "type": "module",
@@ -29,6 +29,9 @@
     "./LICENSE"
   ],
   "exports": {
+    ".": {
+      "import": "./kc/v3/index.js"
+    },
     "./v2": {
       "import": "./kc/v2/index.js"
     },
@@ -42,8 +45,8 @@
       "import": "./kc/directive/index.js"
     }
   },
-  "main": "./index.js",
-  "module": "./index.js",
+  "main": "./kc/v3/index.js",
+  "module": "./kc/v3/index.js",
   "packageManager": "yarn@4.4.1",
   "vetur": {
     "tags": "./json/tags.json",
