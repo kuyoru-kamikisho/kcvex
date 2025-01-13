@@ -166,11 +166,33 @@
 
 #### Scroll
 
+在一些项目中可能会有类似跑马灯一样让列表不断滚动的效果，
+该指令的作用就是让可以滚动的元素实现自动滚动效果。
+
+当内容高度超过父级高度时，该指令的效果才会被表现出来，
+因为该指令并不是真正意义上的跑马灯，他操控的是元素的滚动条，
+因此在内容高度未超过父级高度或者父级溢出高度的内容被裁剪的情况下，
+该指令不会对元素进行滚动。
+
+⚠️尽管scroll指令可以检测到传入参数值的变化，但是需要注意的是，该指令的部分特性依赖于vue指令的update钩子，
+这意味着直接修改对象的属性值可能不会触发vue的update钩子，从而导致scroll指令出现预期外的小问题。
+<br>因此，以选项式组件为例，<u>推荐您使用下面的方式来控制参数的变化</u>：
+
 ```vue
 
 <template>
-  <k-sheet height="300px" overflow="auto" v-scroll="{factor:.3}">
-    <k-sheet height="1000px" color="grey"></k-sheet>
+  <k-sheet @mouseenter.native="hovered=true"
+           @mouseleave.native="hovered=false"
+           height="300px"
+           overflow="auto"
+           v-scroll="scrollObject">
+    <k-sheet height="1000px" color="grey">
+      因为hovered参数不是对象，直接赋值就可以触发vue的update钩子，
+      此时，鼠标悬浮会暂停滚动，您可以手动控制滚动位置，
+      在鼠标离开后会重新读取当前的滚动距离并开始滚动。
+      如果未触发update钩子，则只会读取上一次自动滚动时到达的位置，
+      而忽略手动控制到达的滚动位置。
+    </k-sheet>
   </k-sheet>
 </template>
 <script>
@@ -179,18 +201,18 @@
 
   export default {
     directives: {Scroll},
-    components: {KSheet}
+    components: {KSheet},
+    data: () => ({
+      hovered: false
+    }),
+    computed: {
+      scrollObject() {
+        return {factor: .2, pause: this.hovered}
+      }
+    }
   }
 </script>
 ```
-
-在一些项目中可能会有类似跑马灯一样让列表不断滚动的效果，
-该指令的作用就是让可以滚动的元素实现自动滚动效果。
-
-当内容高度超过父级高度时，该指令的效果才会被表现出来，
-因为该指令并不是真正意义上的跑马灯，他操控的是元素的滚动条，
-因此在内容高度未超过父级高度或者父级溢出高度的内容被裁剪的情况下，
-该指令不会对元素进行滚动。
 
 下面是该指令接收的对象以及参数说明，它完全可以是响应式的！
 
