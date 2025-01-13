@@ -54,8 +54,10 @@ function scroller(dom, o) {
         nextToX = o.reverse ? dom.__scroll_prevx - factor : dom.__scroll_prevx + factor,
         nextToY = o.reverse ? dom.__scroll_prevy - factor : dom.__scroll_prevy + factor
 
-    dom.__scroll_prevx = nextToX
-    dom.__scroll_prevy = nextToY
+    if (!o.pause){
+        dom.__scroll_prevx = nextToX
+        dom.__scroll_prevy = nextToY
+    }
 
     dom.__scroll_requestanime = requestAnimationFrame(() => {
         if (!o.reverse) {
