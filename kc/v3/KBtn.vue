@@ -9,8 +9,8 @@ export default defineComponent({
     width: {type: String, default: '72px'},
     height: {type: String, default: '40px'},
     radius: {type: String, default: '4px'},
-    hoverClass: {type: String, default: 'elevation-4'},
-    leaveClass: {type: String, default: 'elevation-2'},
+    hoverClass: {type: String, default: ''},
+    leaveClass: {type: String, default: ''},
   },
   setup(props) {
     const slots = useSlots()

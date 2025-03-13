@@ -39,6 +39,14 @@ export default {
       } else {
         targetDom.appendChild(this.$el)
       }
+    },
+    overflowReset() {
+      if (this.preventOverflow) {
+        const rootElement = document.querySelector('html');
+        rootElement.style.setProperty('height', this.rootStyle.overflow, this.rootStyle.overflowPriority)
+        rootElement.style.setProperty('overflow', this.rootStyle.height, this.rootStyle.heightPriority)
+      }
+
     }
   },
   mounted() {
@@ -54,11 +62,13 @@ export default {
     this.attachEl()
   },
   destroyed() {
-    if (this.preventOverflow) {
-      const rootElement = document.querySelector('html');
-      rootElement.style.setProperty('height', this.rootStyle.overflow, this.rootStyle.overflowPriority)
-      rootElement.style.setProperty('overflow', this.rootStyle.height, this.rootStyle.heightPriority)
-    }
+    if (this.$el) this.$el.remove()
+    this.overflowReset()
+  },
+  beforeRouteLeave(to, from, next) {
+    this.overflowReset()
+    this.$destroy()
+    if (next) next()
   },
   render(h) {
     return this.model && h('transition', {
