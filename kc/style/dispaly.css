@@ -10,6 +10,10 @@
     display: contents;
 }
 
+.d-inline-flex {
+    display: inline-flex;
+}
+
 .d-inline-grid {
     display: inline-grid;
 }
