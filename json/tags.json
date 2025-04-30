@@ -53,6 +53,18 @@
     ],
     "description": ""
   },
+  "KProgressCircular": {
+    "attributes": [
+      "tag",
+      "color",
+      "indeterminate",
+      "rotate",
+      "size",
+      "value",
+      "width"
+    ],
+    "description": ""
+  },
   "KSheet": {
     "attributes": [
       "tag",

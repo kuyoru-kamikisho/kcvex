@@ -1,20 +1,58 @@
 {
-  "KOverlay/tag": {
-    "type": "string\n",
-    "description": "Specify an element tag."
-  },
-  "KSheet/tag": {
-    "type": "string\n",
-    "description": "Specify an element tag."
-  },
   "KBtn/tag": {
     "type": "string\n",
     "description": "Specify an element tag."
+  },
+  "KBtn/textColor": {
+    "type": "string\n",
+    "description": "Specify text color."
+  },
+  "KBtn/color": {
+    "type": "string\n",
+    "description": "Specify background color."
+  },
+  "KBtn/width": {
+    "type": "string\n",
+    "description": "Specify width."
+  },
+  "KBtn/height": {
+    "type": "string\n",
+    "description": "Specify height."
+  },
+  "KBtn/radius": {
+    "type": "string\n",
+    "description": "Specify border radius."
+  },
+  "KBtn/hoverClass": {
+    "type": "string\n",
+    "description": "Specify class when mouseover."
+  },
+  "KBtn/leaveClass": {
+    "type": "string\n",
+    "description": "Specify class when mouseout."
+  },
+
+  "KDivider/color": {
+    "type": "string\n",
+    "description": "Specify color."
+  },
+  "KDivider/width": {
+    "type": "string\n",
+    "description": "Specify width."
+  },
+  "KDivider/height": {
+    "type": "string\n",
+    "description": "Specify height."
+  },
+  "KDivider/margin": {
+    "type": "string\n",
+    "description": "Specify margin."
   },
   "KDivider/tag": {
     "type": "string\n",
     "description": "Specify an element tag."
   },
+
   "KExpandTransition/direction": {
     "type": "string\n",
     "description": "Specify the expand direction is x or y, default y."
@@ -23,9 +61,14 @@
     "type": "string\n",
     "description": "Specify the transition mode."
   },
+
+  "KOverlay/tag": {
+    "type": "string\n",
+    "description": "Specify an element tag."
+  },
   "KOverlay/transition": {
     "type": "string\n",
-    "description": "Specify the transition class, default kfade which has been defined in KStyle."
+    "description": "Sets the component transition. Can be one of the built in transitions or one your own."
   },
   "KOverlay/model": {
     "type": "boolean\n",
@@ -91,49 +134,39 @@
     "type": "boolean\n",
     "description": "Control the scrollbar is show or hidden when overlay is pop up."
   },
-  "KBtn/textColor": {
+
+  "KProgressCircular/tag": {
     "type": "string\n",
-    "description": "Specify text color."
+    "description": "Specify an element tag."
   },
-  "KBtn/color": {
+  "KProgressCircular/color": {
     "type": "string\n",
-    "description": "Specify background color."
+    "description": "Applies specified color to the control - it can be the name of material color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5))."
   },
-  "KBtn/width": {
+  "KProgressCircular/indeterminate": {
     "type": "string\n",
-    "description": "Specify width."
+    "description": "Constantly animates, use when loading progress is unknown."
   },
-  "KBtn/height": {
+  "KProgressCircular/rotate": {
     "type": "string\n",
-    "description": "Specify height."
+    "description": "Rotates the circle start point in deg."
   },
-  "KBtn/radius": {
+  "KProgressCircular/size": {
     "type": "string\n",
-    "description": "Specify border radius."
+    "description": "Sets the diameter of the circle in pixels."
   },
-  "KBtn/hoverClass": {
+  "KProgressCircular/value": {
     "type": "string\n",
-    "description": "Specify class when mouseover."
+    "description": "The percentage value for current progress."
   },
-  "KBtn/leaveClass": {
+  "KProgressCircular/width": {
     "type": "string\n",
-    "description": "Specify class when mouseout."
+    "description": "Sets the stroke of the circle in pixels."
   },
-  "KDivider/color": {
+
+  "KSheet/tag": {
     "type": "string\n",
-    "description": "Specify color."
-  },
-  "KDivider/width": {
-    "type": "string\n",
-    "description": "Specify width."
-  },
-  "KDivider/height": {
-    "type": "string\n",
-    "description": "Specify height."
-  },
-  "KDivider/margin": {
-    "type": "string\n",
-    "description": "Specify margin."
+    "description": "Specify an element tag."
   },
   "KSheet/color": {
     "type": "string\n",
