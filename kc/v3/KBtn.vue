@@ -2,6 +2,7 @@
 import {useSlots, h, ref, defineComponent} from 'vue'
 
 export default defineComponent({
+  name: 'KBtn',
   props: {
     tag: {type: String, default: 'button'},
     textColor: {type: String, default: 'white'},

@@ -2,6 +2,7 @@
 import {camelize, defineComponent, Transition, h, useSlots} from 'vue'
 
 export default defineComponent({
+  name: 'KExpandTransition',
   props: {
     direction: {type: String, default: 'y'},
     mode: {type: String, default: "out-in"}

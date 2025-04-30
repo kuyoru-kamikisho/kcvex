@@ -12,6 +12,7 @@ import {
 } from "vue";
 
 export default defineComponent({
+  name: 'KOverlay',
   props: {
     tag: {type: String, default: 'div'},
     attachTo: {type: String, default: 'body'},

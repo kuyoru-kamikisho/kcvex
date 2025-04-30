@@ -2,6 +2,7 @@
 import {useSlots, h, defineComponent} from 'vue'
 
 export default defineComponent({
+  name: 'KSheet',
   props: {
     tag: {type: String, default: 'div'},
     color: {type: String, default: ''},

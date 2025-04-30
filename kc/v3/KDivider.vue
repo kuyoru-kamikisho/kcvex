@@ -2,6 +2,7 @@
 import {h, defineComponent} from 'vue'
 
 export default defineComponent({
+  name: 'KDivider',
   props: {
     tag: {type: String, default: 'div'},
     color: {type: String, default: 'rgb(29,129,244)'},

@@ -2,6 +2,7 @@
 import {upperFirst} from "../tools.js"
 
 export default {
+  name: 'KExpandTransition',
   props: {
     direction: {type: String, default: "y"},
     mode: {type: String, default: "out-in"}
