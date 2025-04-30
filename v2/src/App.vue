@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import '../../kc/style.js'
+// @ts-ignore
 import VExpandTransition from "../../kc/v2/KExpandTransition.vue";
 // @ts-ignore
 import KOverlay from "../../kc/v2/KOverlay.vue";
@@ -92,7 +93,9 @@ function pse1() {
           进度百分比：
           <input id="pgc" type="text" v-model="pgc" class="py-2 px-3">
         </label>
-        <k-progress-circular :value="pgc"></k-progress-circular>
+        <k-progress-circular :value="pgc">{{ pgc }}</k-progress-circular>
+        <k-progress-circular indeterminate></k-progress-circular>
+        <k-progress-circular color="blue" value="70" width="8"></k-progress-circular>
       </div>
     </div>
   </div>
