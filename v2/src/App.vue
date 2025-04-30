@@ -9,6 +9,8 @@ import KDivider from "../../kc/v2/KDivider.vue";
 import KSheet from "../../kc/v2/KSheet.vue";
 // @ts-ignore
 import KBtn from "../../kc/v2/KBtn.vue";
+// @ts-ignore
+import KProgressCircular from "../../kc/v2/KProgressCircular.vue";
 import {ref} from "vue";
 
 const fox = ref(true)
@@ -16,6 +18,7 @@ const foy = ref(true)
 const ovl = ref(false)
 const pse = ref(false)
 const scr = ref(true)
+const pgc = ref(20)
 
 function pse0() {
   pse.value = false
@@ -83,6 +86,14 @@ function pse1() {
         <k-sheet v-if="scr" width="40px" height="40px" color="blue" key="1"></k-sheet>
         <k-sheet v-else width="40px" height="40px" color="red" key="2"></k-sheet>
       </transition>
+
+      <div class="px-6">
+        <label for="pgc">
+          进度百分比：
+          <input id="pgc" type="text" v-model="pgc" class="py-2 px-3">
+        </label>
+        <k-progress-circular :value="pgc"></k-progress-circular>
+      </div>
     </div>
   </div>
 </template>

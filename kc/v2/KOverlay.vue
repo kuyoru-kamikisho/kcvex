@@ -1,4 +1,6 @@
 <script>
+import {unitgen} from "../tools.js";
+
 export default {
   name: "KOverlay",
   props: {
@@ -78,19 +80,19 @@ export default {
     }, [h(this.tag || 'div', {
       staticClass: 'k-overlay',
       style: {
-        width: this.width,
-        height: this.height,
-        minWidth: this.minWidth,
-        maxWidth: this.maxWidth,
-        maxHeight: this.maxHeight,
-        minHeight: this.minHeight,
+        width: unitgen(this.width),
+        height: unitgen(this.height),
+        minWidth: unitgen(this.minWidth),
+        maxWidth: unitgen(this.maxWidth),
+        minHeight: unitgen(this.minHeight),
+        maxHeight: unitgen(this.maxHeight),
         overflow: this.overflow,
         'background-color': this.color,
         position: this.position,
-        top: this.top,
-        left: this.left,
-        right: this.right,
-        bottom: this.bottom,
+        top: unitgen(this.top),
+        left: unitgen(this.left),
+        right: unitgen(this.right),
+        bottom: unitgen(this.bottom),
         'z-index': this.zIndex
       },
       on: this.$listeners

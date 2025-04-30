@@ -1,6 +1,6 @@
 {
   "name": "kcvex",
-  "version": "1.7.41",
+  "version": "1.8.0",
   "description": "以 精小而快速 的理念设计的高效率布局UI库，同时适用于vue2和vue3！",
   "private": false,
   "type": "module",
@@ -43,6 +43,9 @@
     },
     "./directive": {
       "import": "./kc/directive/index.js"
+    },
+    "./tools": {
+      "import": "./kc/tools.js"
     }
   },
   "main": "./kc/v3/index.js",

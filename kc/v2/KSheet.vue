@@ -1,4 +1,6 @@
 <script>
+import {unitgen} from "../tools.js";
+
 export default {
   name: "KSheet",
   props: {
@@ -15,13 +17,13 @@ export default {
   computed: {
     style() {
       return `background-color: ${this.color};
-              width:${this.width};
-              height:${this.height};
+              width:${unitgen(this.width)};
+              height:${unitgen(this.height)};
               overflow:${this.overflow};
-              max-width:${this.maxWidth};
-              max-height:${this.maxHeight};
-              min-width:${this.minWidth};
-              min-height:${this.minHeight};`
+              max-width:${unitgen(this.maxWidth)};
+              max-height:${unitgen(this.maxHeight)};
+              min-width:${unitgen(this.minWidth)};
+              min-height:${unitgen(this.minHeight)};`
     }
   },
   render(h) {

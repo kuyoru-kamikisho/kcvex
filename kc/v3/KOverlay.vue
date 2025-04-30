@@ -10,6 +10,7 @@ import {
   Transition,
   Teleport
 } from "vue";
+import {unitgen} from "../tools.js";
 
 export default defineComponent({
   name: 'KOverlay',
@@ -45,19 +46,19 @@ export default defineComponent({
     })
 
     const styles = computed(() => ({
-      width: props.width,
-      height: props.height,
-      minWidth: props.minWidth,
-      maxWidth: props.maxWidth,
-      maxHeight: props.maxHeight,
-      minHeight: props.minHeight,
+      width: unitgen(props.width),
+      height: unitgen(props.height),
+      minWidth: unitgen(props.minWidth),
+      maxWidth: unitgen(props.maxWidth),
+      minHeight: unitgen(props.minHeight),
+      maxHeight: unitgen(props.maxHeight),
       overflow: props.overflow,
       'background-color': props.color,
       position: props.position,
-      top: props.top,
-      left: props.left,
-      right: props.right,
-      bottom: props.bottom,
+      top: unitgen(props.top),
+      left: unitgen(props.left),
+      right: unitgen(props.right),
+      bottom: unitgen(props.bottom),
       'z-index': props.zIndex
     }))
 

@@ -1,4 +1,6 @@
 <script>
+import {unitgen} from "../tools.js";
+
 export default {
   name: "KBtn",
   data: () => ({
@@ -8,19 +10,19 @@ export default {
     tag: {type: String, default: 'button'},
     textColor: {type: String, default: 'white'},
     color: {type: String, default: '#1f9deb'},
-    width: {type: String, default: '72px'},
-    height: {type: String, default: '40px'},
-    radius: {type: String, default: '4px'},
-    hoverClass: {type: String, default: 'elevation-4'},
-    leaveClass: {type: String, default: 'elevation-2'},
+    width: {type: String, default: '72'},
+    height: {type: String, default: '40'},
+    radius: {type: String, default: '4'},
+    hoverClass: {type: String, default: ''},
+    leaveClass: {type: String, default: ''},
   },
   computed: {
     style() {
       return `background-color: ${this.color};
-              width:${this.width};
-              height:${this.height};
+              width:${unitgen(this.width)};
+              height:${unitgen(this.height)};
               color:${this.textColor};
-              border-radius:${this.radius};`
+              border-radius:${unitgen(this.radius)};`
     }
   },
   render(h) {

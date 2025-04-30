@@ -1,4 +1,5 @@
 <script>
+import {unitgen} from "../tools.js";
 import {useSlots, h, defineComponent} from 'vue'
 
 export default defineComponent({
@@ -20,13 +21,13 @@ export default defineComponent({
       class: 'k-sheet',
       style: {
         'background-color': props.color,
-        width: props.width,
-        height: props.height,
+        width: unitgen(props.width),
+        height: unitgen(props.height),
         overflow: props.overflow,
-        'max-width': props.maxWidth,
-        'max-height': props.maxHeight,
-        'min-width': props.minWidth,
-        'min-height': props.minHeight
+        'max-width': unitgen(props.maxWidth),
+        'max-height': unitgen(props.maxHeight),
+        'min-width': unitgen(props.minWidth),
+        'min-height': unitgen(props.minHeight)
       }
     }, slots.default?.())
   }

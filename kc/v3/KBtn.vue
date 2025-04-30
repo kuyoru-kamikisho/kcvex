@@ -1,5 +1,6 @@
 <script>
-import {useSlots, h, ref, defineComponent} from 'vue'
+import {unitgen} from "../tools.js";
+import {useSlots, h, ref, defineComponent} from 'vue';
 
 export default defineComponent({
   name: 'KBtn',
@@ -7,9 +8,9 @@ export default defineComponent({
     tag: {type: String, default: 'button'},
     textColor: {type: String, default: 'white'},
     color: {type: String, default: '#1f9deb'},
-    width: {type: String, default: '72px'},
-    height: {type: String, default: '40px'},
-    radius: {type: String, default: '4px'},
+    width: {type: String, default: '72'},
+    height: {type: String, default: '40'},
+    radius: {type: String, default: '4'},
     hoverClass: {type: String, default: ''},
     leaveClass: {type: String, default: ''},
   },
@@ -22,10 +23,10 @@ export default defineComponent({
       class: ['k-btn', hovered.value ? props.hoverClass : props.leaveClass],
       style: {
         'background-color': props.color,
-        width: props.width,
-        height: props.height,
+        width: unitgen(props.width),
+        height: unitgen(props.height),
         color: props.textColor,
-        'border-radius': props.radius,
+        'border-radius': unitgen(props.radius),
       },
       onMouseenter() {
         hovered.value = true
