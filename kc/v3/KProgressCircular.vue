@@ -1,7 +1,8 @@
 <script>
 import {unitgen} from "../tools.js";
+import {useSlots, h, computed, defineComponent} from 'vue'
 
-export default {
+export default defineComponent({
   name: "KProgressCircular",
   props: {
     tag: {type: String, default: 'div'},
@@ -12,86 +13,75 @@ export default {
     value: {type: [Number, String], default: 0},
     width: {type: [Number, String], default: 4},
   },
-  data: () => ({
-    radius: 20,
-  }),
-  computed: {
-    normalizedValue() {
-      if (this.value < 0)
+  setup(props) {
+    const RADIUS = 20
+    const CIRCUMFERENCE = 2 * Math.PI * RADIUS
+    const STROKEDASHARRAY = Math.round(CIRCUMFERENCE * 1000) / 1000
+
+    const slots = useSlots()
+
+    const normalizedValue = computed(() => {
+      if (props.value < 0)
         return 0
-      if (this.value > 100)
+      if (props.value > 100)
         return 100
-      return parseInt(this.value)
-    },
-    circumference() {
-      return 2 * Math.PI * this.radius
-    },
-    strokeDashArray() {
-      return Math.round(this.circumference * 1000) / 1000
-    },
-    strokeDashOffset() {
-      return ((100 - this.normalizedValue) / 100) * this.circumference + 'px'
-    },
-    viewBoxSize() {
-      return this.radius / (1 - parseInt(this.width) / parseInt(this.size))
-    },
-  },
-  methods: {
-    genCircle(name, offset) {
-      return this.$createElement('circle', {
+      return parseInt(props.value)
+    })
+
+    const strokeDashOffset = computed(() => ((100 - normalizedValue.value) / 100) * CIRCUMFERENCE + 'px')
+    const viewBoxSize = computed(() => RADIUS / (1 - parseInt(props.width) / parseInt(props.size)))
+
+    function genCircle(name, offset) {
+      return h('circle', {
         class: `k-progress-circular__${name}`,
-        attrs: {
-          fill: 'transparent',
-          cx: 2 * this.viewBoxSize,
-          cy: 2 * this.viewBoxSize,
-          r: this.radius,
-          'stroke-width': unitgen(parseInt(this.width) / parseInt(this.size) * this.viewBoxSize * 2),
-          'stroke-dasharray': this.strokeDashArray,
-          'stroke-dashoffset': offset,
-        },
+        fill: 'transparent',
+        cx: 2 * viewBoxSize.value,
+        cy: 2 * viewBoxSize.value,
+        r: RADIUS,
+        'stroke-width': unitgen(parseInt(props.width) / parseInt(props.size) * viewBoxSize.value * 2),
+        'stroke-dasharray': STROKEDASHARRAY,
+        'stroke-dashoffset': offset,
       })
-    },
-    genSvg() {
+    }
+
+    function genSvg() {
       const children = [
-        this.indeterminate || this.genCircle('underlay', 0),
-        this.genCircle('overlay', this.strokeDashOffset),
+        props.indeterminate || genCircle('underlay', 0),
+        genCircle('overlay', strokeDashOffset.value),
       ]
 
-      return this.$createElement('svg', {
+      return h('svg', {
         style: {
-          transform: `rotate(${parseInt(this.rotate)}deg)`,
+          transform: `rotate(${parseInt(props.rotate)}deg)`,
         },
-        attrs: {
-          xmlns: 'http://www.w3.org/2000/svg',
-          viewBox: `${this.viewBoxSize} ${this.viewBoxSize} ${2 * this.viewBoxSize} ${2 * this.viewBoxSize}`,
-        },
+        xmlns: 'http://www.w3.org/2000/svg',
+        viewBox: `${viewBoxSize.value} ${viewBoxSize.value} ${2 * viewBoxSize.value} ${2 * viewBoxSize.value}`,
       }, children)
-    },
-    genInfo() {
-      return this.$createElement(this.tag, {
-        staticClass: 'k-progress-circular__info',
-      }, this.$slots.default)
-    },
-  },
-  render(h) {
-    return h(this.tag || 'div', {
-      staticClass: 'k-progress-circular',
+    }
+
+    function genInfo() {
+      return h(props.tag, {
+        class: 'k-progress-circular__info',
+      }, slots.default?.())
+    }
+
+    return () => h(props.tag || 'div', {
       class: {
-        'k-progress-circular--indeterminate': this.indeterminate,
+        'k-progress-circular': true,
+        'k-progress-circular--indeterminate': props.indeterminate,
       },
       style: {
-        width: unitgen(this.size),
-        height: unitgen(this.size),
-        color: this.color,
-        caretColor: this.color,
-      },
-      on: this.$listeners
+        width: unitgen(props.size),
+        height: unitgen(props.size),
+        color: props.color,
+        caretColor: props.color,
+      }
     }, [
-      this.genSvg(),
-      this.genInfo(),
+      genSvg(),
+      genInfo()
     ])
   }
-}
+})
 </script>
 
 <style scoped>

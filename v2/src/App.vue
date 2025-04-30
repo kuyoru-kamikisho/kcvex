@@ -1,16 +1,11 @@
 <script setup lang="ts">
+// @ts-nocheck
 import '../../kc/style.js'
-// @ts-ignore
 import VExpandTransition from "../../kc/v2/KExpandTransition.vue";
-// @ts-ignore
 import KOverlay from "../../kc/v2/KOverlay.vue";
-// @ts-ignore
 import KDivider from "../../kc/v2/KDivider.vue";
-// @ts-ignore
 import KSheet from "../../kc/v2/KSheet.vue";
-// @ts-ignore
 import KBtn from "../../kc/v2/KBtn.vue";
-// @ts-ignore
 import KProgressCircular from "../../kc/v2/KProgressCircular.vue";
 import {ref} from "vue";
 

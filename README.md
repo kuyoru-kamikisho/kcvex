@@ -15,6 +15,7 @@
         * [KDivider](#kdivider)
         * [KExpandTransition](#kexpandtransition)
         * [KOverlay](#koverlay)
+        * [KProgressCircular](#kprogresscircular)
         * [KSheet](#ksheet)
     * [指令](#指令)
         * [Ripple](#ripple)
@@ -127,6 +128,10 @@
 #### KOverlay
 
 `遮罩` 组件，可快速设置一定的样式，支持跨Dom结构进行渲染，详情可以看该组件的 props，提供默认插槽
+
+#### KProgressCircular
+
+`进度环` 组件，可根据值控制环的进度，也可以设置为一直旋转的加载动画，该组件以像素为基础参考单位
 
 #### KSheet
 

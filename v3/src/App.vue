@@ -1,4 +1,5 @@
 <script setup lang="ts">
+// @ts-nocheck
 import {onMounted, ref} from "vue";
 import '../../kc/style.js'
 import VExpandTransition from "../../kc/v3/KExpandTransition.vue";
@@ -6,6 +7,7 @@ import KOverlay from "../../kc/v3/KOverlay.vue";
 import KBtn from '../../kc/v3/KBtn.vue'
 import KSheet from '../../kc/v3/KSheet.vue'
 import KDivider from '../../kc/v3/KDivider.vue'
+import KProgressCircular from '../../kc/v3/KProgressCircular.vue'
 import {genHash} from "@/utils";
 
 let mark1 = 0
@@ -14,6 +16,7 @@ const ovl = ref(false)
 const pse = ref(false)
 const list = ref([])
 const scr = ref(true)
+const pvc = ref(20)
 
 function scrollEn() {
   pse.value = true
@@ -44,6 +47,14 @@ onMounted(() => {
     <button @click="xss[0]=!xss[0]">X测试</button>
     <button @click="xss[1]=!xss[1]">Y测试</button>
     <k-btn height="24px" @click="ovl=true" v-ripple class="position-relative pa-4">遮罩测试</k-btn>
+    <label for="pvc">
+      百分比值大小
+      <input v-model="pvc" id="pvc" type="text" class="px-2 py-1">
+    </label>
+    <k-progress-circular :value="pvc"></k-progress-circular>
+    <k-progress-circular indeterminate></k-progress-circular>
+    <k-progress-circular indeterminate color="red" size="48"></k-progress-circular>
+    <k-progress-circular :value="pvc" width="8" size="48">{{ pvc }}</k-progress-circular>
     <k-overlay :model="ovl">
       <button @click="ovl=false">关闭遮罩</button>
     </k-overlay>
