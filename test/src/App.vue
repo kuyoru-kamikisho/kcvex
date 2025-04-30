@@ -1,6 +1,7 @@
 <script setup lang="ts">
+// @ts-nocheck
 import 'kcvex/style'
-import {KSheet} from 'kcvex/v2'
+import {KSheet, KProgressCircular} from 'kcvex/v2'
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
 </script>
@@ -8,7 +9,11 @@ import TheWelcome from './components/TheWelcome.vue'
 <template>
   <div id="app">
     <header>
-      <k-sheet color="blue" width="100px" height="40px" class="pa-10">测试</k-sheet>
+      <k-sheet color="#80808029" class="pa-10">
+        测试
+        <k-progress-circular indeterminate color="red"></k-progress-circular>
+        <k-progress-circular value="70" color="red">70</k-progress-circular>
+      </k-sheet>
       <div class="wrapper">
         <HelloWorld msg="You did it!"/>
       </div>
