@@ -3,6 +3,7 @@ import {unitgen} from "../tools.js";
 
 export default {
   name: "KOverlay",
+  emits: ['update:model'],
   props: {
     tag: {type: String, default: 'div'},
     attachTo: {type: String, default: 'body'},
@@ -23,6 +24,7 @@ export default {
     right: {type: String, default: '0'},
     zIndex: {type: String, default: '2024'},
     preventOverflow: {type: Boolean, default: false},
+    closeOnPressEsc: {type: Boolean, default: true},
   },
   data: () => ({
     rootStyle: {
@@ -32,6 +34,21 @@ export default {
       overflowPriority: ''
     }
   }),
+  watch: {
+    model: {
+      immediate: true,
+      handler(n, o) {
+        if (n && this.closeOnPressEsc) {
+          this.$nextTick(() => {
+            this.$el.focus()
+            this.$el.addEventListener('keyup', () => {
+              this.$emit('update:model', false)
+            })
+          })
+        }
+      }
+    }
+  },
   methods: {
     attachEl() {
       if (!this.attachTo) return
@@ -75,10 +92,13 @@ export default {
   render(h) {
     return this.model && h('transition', {
       attrs: {
-        name: this.transition
+        name: this.transition,
       }
     }, [h(this.tag || 'div', {
       staticClass: 'k-overlay',
+      attrs: {
+        tabindex: '-1',
+      },
       style: {
         width: unitgen(this.width),
         height: unitgen(this.height),

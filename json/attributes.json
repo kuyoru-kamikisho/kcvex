@@ -134,6 +134,10 @@
     "type": "boolean\n",
     "description": "Control the scrollbar is show or hidden when overlay is pop up."
   },
+  "KOverlay/closeOnPressEsc": {
+    "type": "boolean\n",
+    "description": "Can the mask be turned off when pressing 'ESC'."
+  },
 
   "KProgressCircular/tag": {
     "type": "string\n",

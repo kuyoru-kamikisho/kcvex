@@ -3,10 +3,13 @@ import {
   ref,
   computed,
   onMounted,
+  defineEmits,
   defineComponent,
   onUnmounted,
   useSlots,
   h,
+  nextTick,
+  watch,
   Transition,
   Teleport
 } from "vue";
@@ -14,6 +17,7 @@ import {unitgen} from "../tools.js";
 
 export default defineComponent({
   name: 'KOverlay',
+  emits: ['update:model'],
   props: {
     tag: {type: String, default: 'div'},
     attachTo: {type: String, default: 'body'},
@@ -34,6 +38,22 @@ export default defineComponent({
     right: {type: String, default: '0'},
     zIndex: {type: String, default: '2024'},
     preventOverflow: {type: Boolean, default: false},
+    closeOnPressEsc: {type: Boolean, default: true},
+  },
+  watch: {
+    model: {
+      immediate: true,
+      handler(n, o) {
+        if (n && this.closeOnPressEsc) {
+          this.$nextTick(() => {
+            this.$refs.el.focus()
+            this.$refs.el.addEventListener('keyup', () => {
+              this.$emit('update:model', false)
+            })
+          })
+        }
+      }
+    }
   },
   setup(props) {
     const slots = useSlots()
@@ -92,7 +112,7 @@ export default defineComponent({
     return () => h(Transition, {name: props.transition},
         () => [props.model
             ? h(Teleport, {to: props.attachTo},
-                h(props.tag || 'div', {class: 'k-overlay', style: styles.value},
+                h(props.tag || 'div', {class: 'k-overlay', style: styles.value, tabindex: '-1', ref: 'el'},
                     slots.default?.()))
             : null])
   }

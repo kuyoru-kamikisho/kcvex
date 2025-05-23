@@ -55,7 +55,7 @@ onMounted(() => {
     <k-progress-circular indeterminate></k-progress-circular>
     <k-progress-circular indeterminate color="red" size="48"></k-progress-circular>
     <k-progress-circular :value="pvc" width="8" size="48">{{ pvc }}</k-progress-circular>
-    <k-overlay :model="ovl">
+    <k-overlay v-model:model="ovl">
       <button @click="ovl=false">关闭遮罩</button>
     </k-overlay>
     <div class="test-box">
