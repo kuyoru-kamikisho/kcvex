@@ -239,7 +239,9 @@
 import 'kcvex/style'
 ```
 
-kcvex 提供大量易于记忆的常用样式切片，详情可以看该组件的 [style列表](./kc/style.js)，
+kcvex 提供大量易于记忆的常用样式切片，相信这些切片可以提高您的开发效率！
+
+详情可以看该组件的 [style列表](./kc/style.js)，
 一些布局组件也用到了这里面的样式类，比如 `KBtn` 的默认阴影效果。
 
 如果您不导入这些切片，则您不可以直接使用这些切片，`极个别`组件的样式可能会受此影响。
@@ -253,6 +255,104 @@ kcvex 提供大量易于记忆的常用样式切片，详情可以看该组件�
 ```css
 @import "kcvex/kc/style/flex.css";
 ```
+
+在下面介绍了各类样式表类名的使用规律：
+
+#### background
+
+- 类型：应用于元素背景
+- 前缀：`bg-`
+- 用例：`bg-repeatx` 等效样式 `background: repeat-x;`
+
+#### cursor
+
+- 类型：应用于鼠标样式
+- 前缀：`c-`
+- 用例：`c-pointer` 等效样式 `cursor: pointer;`
+
+#### display
+
+- 类型：应用于元素盒类型
+- 前缀：`d-`
+- 用例：`d-flex` 等效样式 `display: flex;`
+
+#### elevation
+
+- 类型：仿卡片悬浮式阴影
+- 前缀：`elevation-` 后接数字，代表阴影高度
+- 用例：`elevation-4`
+  等效样式 ` box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);`
+
+#### kfade
+
+- 类型：过渡动画，渐变
+- 用例：`<transition name="kfade"></transition>`
+
+#### flex
+
+- 类型：弹性盒相关的类，搭配 `d-flex` 快速实现弹性盒布局
+- 前缀：`flex-`、`align-`、`justify-`
+- 用例：`d-flex align-ct justify-sb` 等效样式 `display: flex;align-items: center;justify-content: center;`
+
+#### margin
+
+- 类型：外边距
+- 前缀：`ml-`、`mr-`、`mt-`、`mb-`、`ma-`、`mx-`、`my-` 后接数字
+- 数值：前缀后面的数字计算方式为 `n * 4`
+- 用例：`ml-3` 等效样式 `margin-left: 12px;`
+
+#### overflow
+
+- 类型：元素溢出规则
+- 前缀：`overflow-`
+- 用例：`overflow-auto` 等效样式 `overflow: auto;`
+
+#### padding
+
+- 类型：内边距
+- 前缀：`pl-`、`pr-`、`pt-`、`pb-`、`pa-`、`px-`、`py-` 后接数字
+- 数值：前缀后面的数字计算方式为 `n * 4`
+- 用例：`pl-3` 等效样式 `padding-left: 12px;`
+
+#### position
+
+- 类型：定位方式
+- 前缀：`position-`
+- 用例：`position-absolute` 等效样式 `position: absolute;`
+
+#### round
+
+- 类型：元素盒圆角
+- 前缀：`round-` 后接数字，只提供了 2-16 的偶数
+- 用例：`round-2` 等效样式 `border-radius: 2px;`
+
+#### scroll
+
+- 类型：过渡动画，滚动
+- 用例：`<transition name="scroll-y"></transition>`
+
+#### selection
+
+- 类型：用户是否可以选中内容
+- 前缀：无
+- 用例：`inselectable` 等效样式 `user-select: none;`
+
+#### size
+
+- 类型：大小
+- 前缀：`w-`、`h-`
+- 用例：`w-100` 等效样式 `width: 100%;`
+
+#### slide
+
+- 类型：过渡动画，滑动
+- 用例：`<transition name="slide-y"></transition>`
+
+#### text
+
+- 类型：大小
+- 前缀：`text-`
+- 用例：`text-nowrap` 等效样式 `white-space: nowrap;`
 
 ## 内置的过渡动画
 
