@@ -37,14 +37,23 @@ export default {
   watch: {
     model: {
       immediate: true,
-      handler(n, o) {
+      handler(n) {
         if (n && this.closeOnPressEsc) {
           this.$nextTick(() => {
             this.$el.focus()
-            this.$el.addEventListener('keyup', () => {
-              this.$emit('update:model', false)
-            })
+
+            this._onEscKeyup && this.$el.removeEventListener('keyup', this._onEscKeyup)
+
+            this._onEscKeyup = (e) => {
+              if (e.key === 'Escape') {
+                this.$emit('update:model', false)
+              }
+            }
+
+            this.$el.addEventListener('keyup', this._onEscKeyup)
           })
+        } else {
+          this._onEscKeyup && this.$el.removeEventListener('keyup', this._onEscKeyup)
         }
       }
     }
