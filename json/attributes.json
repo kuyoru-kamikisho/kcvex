@@ -66,6 +66,10 @@
     "type": "string\n",
     "description": "Specify an element tag."
   },
+  "KOverlay/attachTo": {
+    "type": "string\n",
+    "description": "Specify the DOM selector where the overlay should be attached, default body."
+  },
   "KOverlay/transition": {
     "type": "string\n",
     "description": "Sets the component transition. Can be one of the built in transitions or one your own."
@@ -148,23 +152,23 @@
     "description": "Applies specified color to the control - it can be the name of material color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5))."
   },
   "KProgressCircular/indeterminate": {
-    "type": "string\n",
+    "type": "boolean\n",
     "description": "Constantly animates, use when loading progress is unknown."
   },
   "KProgressCircular/rotate": {
-    "type": "string\n",
+    "type": "number | string\n",
     "description": "Rotates the circle start point in deg."
   },
   "KProgressCircular/size": {
-    "type": "string\n",
+    "type": "number | string\n",
     "description": "Sets the diameter of the circle in pixels."
   },
   "KProgressCircular/value": {
-    "type": "string\n",
+    "type": "number | string\n",
     "description": "The percentage value for current progress."
   },
   "KProgressCircular/width": {
-    "type": "string\n",
+    "type": "number | string\n",
     "description": "Sets the stroke of the circle in pixels."
   },
 

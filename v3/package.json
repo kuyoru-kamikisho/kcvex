@@ -7,6 +7,7 @@
     "dev": "vite",
     "preview": "vite preview",
     "build": "vite build",
+    "build:lib": "vite build --config vite.lib.config.mjs",
     "type-check": "vue-tsc --build --force"
   },
   "dependencies": {

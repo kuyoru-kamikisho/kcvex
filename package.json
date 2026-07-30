@@ -1,8 +1,7 @@
 {
   "name": "kcvex",
-  "version": "1.8.3",
+  "version": "2.0.0",
   "description": "以 精小而快速 的理念设计的高效率布局UI库，同时适用于vue2和vue3！",
-  "private": false,
   "type": "module",
   "author": {
     "name": "kuyoru"
@@ -13,7 +12,9 @@
     "expandTransition",
     "v-expand-transition",
     "v-overlay",
-    "vue-ui"
+    "vue-ui",
+    "vue2",
+    "vue3"
   ],
   "repository": {
     "type": "git",
@@ -22,37 +23,123 @@
   "bugs": {
     "url": "https://github.com/kuyoru-kamikisho/kcvex/issues"
   },
+  "homepage": "https://github.com/kuyoru-kamikisho/kcvex#readme",
+  "sideEffects": [
+    "*.css",
+    "./style.js",
+    "./dist/style/**",
+    "./dist/v2/**",
+    "./dist/v3/**",
+    "./dist/directive/**"
+  ],
   "files": [
-    "./kc",
-    "./json",
+    "dist",
+    "kc/style/*.css",
+    "json",
+    "./index.js",
+    "./index.d.ts",
+    "./v2.js",
+    "./v2.d.ts",
+    "./v3.js",
+    "./v3.d.ts",
+    "./directive.js",
+    "./directive.d.ts",
+    "./tools.js",
+    "./tools.d.ts",
+    "./style.js",
+    "./style.d.ts",
+    "./web-types.json",
     "./README.md",
     "./LICENSE"
   ],
+  "main": "./dist/v3/index.cjs",
+  "module": "./dist/v3/index.mjs",
+  "types": "./index.d.ts",
+  "unpkg": "./dist/v3/index.umd.js",
+  "jsdelivr": "./dist/v3/index.umd.js",
   "exports": {
     ".": {
-      "import": "./kc/v3/index.js"
+      "types": "./index.d.ts",
+      "import": "./dist/v3/index.mjs",
+      "require": "./dist/v3/index.cjs",
+      "default": "./dist/v3/index.mjs"
     },
     "./v2": {
-      "import": "./kc/v2/index.js"
+      "types": "./v2.d.ts",
+      "import": "./dist/v2/index.mjs",
+      "require": "./dist/v2/index.cjs",
+      "default": "./dist/v2/index.mjs"
     },
     "./v3": {
-      "import": "./kc/v3/index.js"
+      "types": "./v3.d.ts",
+      "import": "./dist/v3/index.mjs",
+      "require": "./dist/v3/index.cjs",
+      "default": "./dist/v3/index.mjs"
     },
     "./style": {
-      "import": "./kc/style.js"
+      "types": "./style.d.ts",
+      "import": "./dist/style/index.mjs",
+      "require": "./dist/style/index.cjs",
+      "default": "./dist/style/index.mjs"
     },
     "./directive": {
-      "import": "./kc/directive/index.js"
+      "types": "./directive.d.ts",
+      "import": "./dist/directive/index.mjs",
+      "require": "./dist/directive/index.cjs",
+      "default": "./dist/directive/index.mjs"
     },
     "./tools": {
-      "import": "./kc/tools.js"
+      "types": "./tools.d.ts",
+      "import": "./dist/tools/index.mjs",
+      "require": "./dist/tools/index.cjs",
+      "default": "./dist/tools/index.mjs"
+    },
+    "./kc/style/*": "./kc/style/*",
+    "./dist/*": "./dist/*",
+    "./package.json": "./package.json"
+  },
+  "typesVersions": {
+    "*": {
+      "v2": [
+        "v2.d.ts"
+      ],
+      "v3": [
+        "v3.d.ts"
+      ],
+      "directive": [
+        "directive.d.ts"
+      ],
+      "tools": [
+        "tools.d.ts"
+      ],
+      "style": [
+        "style.d.ts"
+      ]
     }
   },
-  "main": "./kc/v3/index.js",
-  "module": "./kc/v3/index.js",
-  "packageManager": "yarn@4.4.1",
+  "peerDependencies": {
+    "vue": "^2.7.0 || ^3.0.0"
+  },
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build:types": "node scripts/generate-types.mjs",
+    "build:v2": "yarn --cwd v2 build:lib",
+    "build:v3": "yarn --cwd v3 build:lib",
+    "build:directive": "vite build --config build/vite.utils.config.mjs",
+    "build:tools": "vite build --config build/vite.utils.config.mjs --mode tools",
+    "build:style": "vite build --config build/vite.utils.config.mjs --mode style",
+    "build": "node scripts/clean.mjs && yarn --cwd v2 build:lib && yarn --cwd v3 build:lib && vite build --config build/vite.utils.config.mjs && vite build --config build/vite.utils.config.mjs --mode tools && vite build --config build/vite.utils.config.mjs --mode style && node scripts/generate-types.mjs",
+    "dev:v2": "yarn --cwd v2 dev",
+    "dev:v3": "yarn --cwd v3 dev",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "vite": "^5.4.10"
+  },
   "vetur": {
     "tags": "./json/tags.json",
     "attributes": "./json/attributes.json"
-  }
+  },
+  "web-types": "./web-types.json",
+  "packageManager": "yarn@4.4.1"
 }

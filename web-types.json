@@ -1,0 +1,541 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JetBrains/web-types/master/schema/web-types.json",
+  "framework": "vue",
+  "name": "kcvex",
+  "version": "2.0.0",
+  "contributions": {
+    "html": {
+      "vue-components": [
+        {
+          "name": "KBtn",
+          "description": "KBtn component",
+          "doc-url": "https://github.com/kuyoru-kamikisho/kcvex",
+          "attributes": [
+            {
+              "name": "tag",
+              "description": "Specify an element tag.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "textColor",
+              "description": "Specify text color.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "color",
+              "description": "Specify background color.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "width",
+              "description": "Specify width.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "height",
+              "description": "Specify height.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "radius",
+              "description": "Specify border radius.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "hoverClass",
+              "description": "Specify class when mouseover.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "leaveClass",
+              "description": "Specify class when mouseout.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "name": "default",
+              "description": "Default slot"
+            }
+          ],
+          "js": {
+            "events": [],
+            "symbols": []
+          },
+          "aliases": [
+            "kbtn"
+          ]
+        },
+        {
+          "name": "KDivider",
+          "description": "KDivider component",
+          "doc-url": "https://github.com/kuyoru-kamikisho/kcvex",
+          "attributes": [
+            {
+              "name": "tag",
+              "description": "Specify an element tag.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "color",
+              "description": "Specify color.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "width",
+              "description": "Specify width.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "height",
+              "description": "Specify height.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "margin",
+              "description": "Specify margin.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "name": "default",
+              "description": "Default slot"
+            }
+          ],
+          "js": {
+            "events": [],
+            "symbols": []
+          },
+          "aliases": [
+            "kdivider"
+          ]
+        },
+        {
+          "name": "KExpandTransition",
+          "description": "KExpandTransition component",
+          "doc-url": "https://github.com/kuyoru-kamikisho/kcvex",
+          "attributes": [
+            {
+              "name": "direction",
+              "description": "Specify the expand direction is x or y, default y.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "mode",
+              "description": "Specify the transition mode.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "name": "default",
+              "description": "Default slot"
+            }
+          ],
+          "js": {
+            "events": [],
+            "symbols": []
+          },
+          "aliases": [
+            "kexpand-transition"
+          ]
+        },
+        {
+          "name": "KOverlay",
+          "description": "KOverlay component",
+          "doc-url": "https://github.com/kuyoru-kamikisho/kcvex",
+          "attributes": [
+            {
+              "name": "tag",
+              "description": "Specify an element tag.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "attachTo",
+              "description": "Specify the DOM selector where the overlay should be attached, default body.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "transition",
+              "description": "Sets the component transition. Can be one of the built in transitions or one your own.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "model",
+              "description": "Specify the dom is show or hidden.",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "width",
+              "description": "Specify the width.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "height",
+              "description": "Specify the height.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "maxWidth",
+              "description": "Specify the max-width.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "maxHeight",
+              "description": "Specify the max-height.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "minWidth",
+              "description": "Specify the min-width.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "minHeight",
+              "description": "Specify the min-height.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "overflow",
+              "description": "Specify the overflow mode.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "color",
+              "description": "Specify the background-color.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "position",
+              "description": "Specify the position style.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "top",
+              "description": "Specify the top style.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "left",
+              "description": "Specify the left style.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "bottom",
+              "description": "Specify the bottom style.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "right",
+              "description": "Specify the right style.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "zIndex",
+              "description": "Specify the z-index style.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "preventOverflow",
+              "description": "Control the scrollbar is show or hidden when overlay is pop up.",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "closeOnPressEsc",
+              "description": "Can the mask be turned off when pressing 'ESC'.",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "name": "default",
+              "description": "Default slot"
+            }
+          ],
+          "js": {
+            "events": [],
+            "symbols": []
+          },
+          "aliases": [
+            "koverlay"
+          ]
+        },
+        {
+          "name": "KProgressCircular",
+          "description": "KProgressCircular component",
+          "doc-url": "https://github.com/kuyoru-kamikisho/kcvex",
+          "attributes": [
+            {
+              "name": "tag",
+              "description": "Specify an element tag.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "color",
+              "description": "Applies specified color to the control - it can be the name of material color (for example success or purple) or css color (#033 or rgba(255, 0, 0, 0.5)).",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "indeterminate",
+              "description": "Constantly animates, use when loading progress is unknown.",
+              "value": {
+                "kind": "expression",
+                "type": "boolean"
+              }
+            },
+            {
+              "name": "rotate",
+              "description": "Rotates the circle start point in deg.",
+              "value": {
+                "kind": "expression",
+                "type": "number | string"
+              }
+            },
+            {
+              "name": "size",
+              "description": "Sets the diameter of the circle in pixels.",
+              "value": {
+                "kind": "expression",
+                "type": "number | string"
+              }
+            },
+            {
+              "name": "value",
+              "description": "The percentage value for current progress.",
+              "value": {
+                "kind": "expression",
+                "type": "number | string"
+              }
+            },
+            {
+              "name": "width",
+              "description": "Sets the stroke of the circle in pixels.",
+              "value": {
+                "kind": "expression",
+                "type": "number | string"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "name": "default",
+              "description": "Default slot"
+            }
+          ],
+          "js": {
+            "events": [],
+            "symbols": []
+          },
+          "aliases": [
+            "kprogress-circular"
+          ]
+        },
+        {
+          "name": "KSheet",
+          "description": "KSheet component",
+          "doc-url": "https://github.com/kuyoru-kamikisho/kcvex",
+          "attributes": [
+            {
+              "name": "tag",
+              "description": "Specify an element tag.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "color",
+              "description": "Specify the background-color of sheet.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "maxWidth",
+              "description": "Specify the max-width.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "maxHeight",
+              "description": "Specify the max-height.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "minWidth",
+              "description": "Specify the min-width.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "minHeight",
+              "description": "Specify the min-height.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "width",
+              "description": "Specify width.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "height",
+              "description": "Specify height.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            },
+            {
+              "name": "overflow",
+              "description": "Specify overflow style.",
+              "value": {
+                "kind": "expression",
+                "type": "string"
+              }
+            }
+          ],
+          "slots": [
+            {
+              "name": "default",
+              "description": "Default slot"
+            }
+          ],
+          "js": {
+            "events": [],
+            "symbols": []
+          },
+          "aliases": [
+            "ksheet"
+          ]
+        }
+      ],
+      "attributes": []
+    }
+  }
+}
